@@ -6,6 +6,7 @@ import menuData from '../../../data/menuData.json';
 import { MenuType } from '../../../utils/types';
 import { baseUrl } from '../../../utils/constants';
 import MenuDetailNav from '../../../components/menu/menuDetail/MenuDetailNav';
+import { Section } from './MenuDetail.styles';
 
 function MenuDetail() {
   const [menu, setMenu] = useState<MenuType[]>([]);
@@ -23,8 +24,8 @@ function MenuDetail() {
   return (
     <Layout>
       {filteredMenu?.map((menu) => (
-        <section key={menu.idx}>
-          <MenuDetailNav cateBtn={menu.category} cateBtnLinkTo={menu.category} />
+        <Section key={menu.idx}>
+          <MenuDetailNav cateBtn={menu.category.toUpperCase()} cateBtnLinkTo={menu.category} />
           <FormOfMenuDetail
             cateBtn={menu.category}
             cateBtnLinkTo={`/menu/${menu.category}`}
@@ -41,7 +42,7 @@ function MenuDetail() {
             당류={menu.당류}
             카페인={menu.카페인}
           />
-        </section>
+        </Section>
       ))}
     </Layout>
   );

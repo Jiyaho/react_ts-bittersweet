@@ -25,7 +25,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/menu" element={<Menu />} />
-        {/* <Route path="/menu-detail/:idx" element={<MenuDetail />} /> */}
         <Route path="/menu/coffee" element={<MenuCoffee />} />
         <Route path="/menu/coffee/:id" element={<MenuDetail />} />
         <Route path="/menu/beverage" element={<MenuBeverage />} />
