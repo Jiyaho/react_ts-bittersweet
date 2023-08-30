@@ -1,26 +1,27 @@
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
+import KakaoMap from '../../components/findStore/KakaoMap';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
-import KakaoMap from '../../components/findStore/KakaoMap';
+
+const Input = styled.input`
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid ${colors.textMd};
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
 
 function FindStore() {
   return (
     <Layout>
       <Title title="FIND A STORE" />
-      <H2>🔍 가까운 매장을 찾아보세요.</H2>
+      <Input placeholder="🔍 가까운 매장을 찾아보세요.."></Input>;
       <KakaoMap />
     </Layout>
   );
 }
 export default FindStore;
-
-const H2 = styled.h2`
-  color: ${colors.textMd};
-  font-size: 1.3em;
-  text-align: center;
-  border-bottom: 2px solid gray;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
-  padding-top: 3px;
-`;
