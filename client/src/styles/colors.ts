@@ -4,4 +4,5 @@ export const colors = {
   textDark: '#3b3939',
   textLight: 'white',
   textMd: 'gray',
+  faqButtonsBg: 'rgb(195, 189, 160)',
 };

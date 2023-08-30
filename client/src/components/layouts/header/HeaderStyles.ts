@@ -72,7 +72,7 @@ export const FaBarsDiv = styled.div`
   font-size: 24px;
   margin-right: 5px;
   display: none;
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;

@@ -15,18 +15,24 @@ export interface MenuType {
 }
 
 export interface MenuDetailType {
-  temperature?: string;
-  menuName_ko?: string;
-  menuName_en?: string;
-  menuDesc?: string;
-  imgsrc?: string;
-  imgalt?: string;
-  열량?: string;
-  나트륨?: string;
-  포화지방?: string;
-  단백질?: string;
-  당류?: string;
-  카페인?: string;
-  cateBtn?: string;
+  temperature: string;
+  menuName_ko: string;
+  menuName_en: string;
+  menuDesc: string;
+  imgsrc: string;
+  imgalt: string;
+  열량: string;
+  나트륨: string;
+  포화지방: string;
+  단백질: string;
+  당류: string;
+  카페인: string;
+  cateBtn: string;
   cateBtnLinkTo: string;
+}
+
+export interface FaqType {
+  idx?: string;
+  q: string;
+  a: string;
 }

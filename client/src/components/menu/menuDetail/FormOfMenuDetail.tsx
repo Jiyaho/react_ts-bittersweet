@@ -24,7 +24,9 @@ function FormOfMenuDetail({
           <li>{menuName_en}</li>
           <li>{menuDesc}</li>
         </ul>
-        <img src={imgsrc} alt={imgalt} />
+        <div>
+          <img src={imgsrc} alt={imgalt} />
+        </div>
       </S.MenuDescDiv>
       <div>
         <S.MenuSizeDiv>

@@ -4,21 +4,37 @@ import { colors } from '../../../styles/colors';
 export const Article = styled.article`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 95%;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: auto;
+  }
 `;
 
 export const MenuDescDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 3%;
+  gap: 2%;
   width: 55%;
+  margin-right: 3%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
+
   ul {
     list-style: none;
     padding-left: 0;
     margin-right: 40px;
-    width: 320px;
+    width: 59%;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: -25px;
+    }
     li:nth-child(1) {
       font-size: 1.3em;
       border-bottom: 2px solid black;
@@ -26,7 +42,7 @@ export const MenuDescDiv = styled.div`
       margin-bottom: 5px;
     }
     li:nth-child(2) {
-      font-size: 2.5em;
+      font-size: 2.3em;
     }
     li:nth-child(3) {
       font-size: 1.4em;
@@ -38,11 +54,16 @@ export const MenuDescDiv = styled.div`
       margin-bottom: 50px;
     }
   }
-  img {
-    width: 50%;
-    display: block;
-    margin: 0%, 3%, 0%, 3%;
-    border-radius: 15px;
+  div {
+    width: 70%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 15px;
+    }
   }
 `;
 

@@ -9,6 +9,6 @@ export default Title;
 const H1 = styled.h1`
   text-align: center;
   color: ${colors.accent};
-  font-size: 2em;
-  margin-bottom: 70px;
+  font-size: 2.2em;
+  margin-bottom: 5%;
 `;

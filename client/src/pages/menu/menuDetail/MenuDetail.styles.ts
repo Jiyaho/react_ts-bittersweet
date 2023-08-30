@@ -5,4 +5,7 @@ export const Section = styled.section`
   flex-direction: column;
   padding: 3%;
   gap: 10vh;
+  @media (max-width: 768px) {
+    gap: 3vh;
+  }
 `;

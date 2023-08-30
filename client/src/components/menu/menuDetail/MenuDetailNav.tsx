@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
-import { MenuDetailType } from '../../../utils/types';
 import { Nav } from './MenuDetailNav.styles';
 
-function MenuDetailNav({ cateBtnLinkTo, cateBtn }: MenuDetailType) {
+interface MenuDeatilNavProps {
+  cateBtnLinkTo: string;
+  cateBtn: string;
+}
+
+function MenuDetailNav({ cateBtnLinkTo, cateBtn }: MenuDeatilNavProps) {
   return (
     <Nav>
       <Link to={`/`}>HOME</Link>

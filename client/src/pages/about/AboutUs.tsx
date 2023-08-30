@@ -5,25 +5,19 @@ import BrandPrinciples from '../../components/about/BrandPrinciples';
 import ScrollButton from '../../components/atoms/ScrollButton';
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
-import styled from 'styled-components';
 
 function AboutUs() {
   return (
     <Layout>
       <ScrollButton />
-      <Section>
+      <section>
         <Title title="ABOUT BITTERSWEET" />
         <AboutNav />
         <BrandHistory />
         <BrandPrinciples />
         <BrandCoffee />
-      </Section>
+      </section>
     </Layout>
   );
 }
 export default AboutUs;
-
-const Section = styled.section`
-  margin-top: 50px;
-  width: 100%;
-`;

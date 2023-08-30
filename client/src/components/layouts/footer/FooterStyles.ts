@@ -21,7 +21,7 @@ export const Ul = styled.ul`
     list-style: square;
   }
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
     li {
