@@ -8,6 +8,7 @@ export const Section = styled.section`
   gap: 5px;
 `;
 export const FirstArticle = styled.article`
+  position: sticky;
   margin-bottom: -4px;
   @keyframes slide-leftToRight {
     from {
@@ -34,7 +35,7 @@ export const FirstArticle = styled.article`
     color: ${colors.textDark};
     font-family: sans-serif;
     position: absolute;
-    top: 160px;
+    top: 80px;
     left: 150px;
     color: ${colors.textLight};
     animation: slide-leftToRight 1s ease-out;
@@ -44,7 +45,7 @@ export const FirstArticle = styled.article`
     font-size: 1.1em;
     position: absolute;
     color: white;
-    top: 240px;
+    top: 160px;
     left: 150px;
     list-style: none;
     padding-left: 0;
@@ -55,7 +56,6 @@ export const FirstArticle = styled.article`
   }
 
   img {
-    /* background: fixed; */
     width: 100%;
   }
 `;

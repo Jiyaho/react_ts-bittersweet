@@ -4,8 +4,6 @@ import { FaDroplet, FaBars } from 'react-icons/fa6';
 import * as S from './HeaderStyles';
 import { pages } from '../../../utils/constants';
 
-type ToggleType = { toggleButton: boolean };
-
 function Header() {
   // const navigate = useNavigate();
   const [toggleButton, setToggleButton] = useState(false);
@@ -26,35 +24,35 @@ function Header() {
 
   return (
     <header>
-      <S.Nav>
-        <S.IconDiv>
-          <S.FaDropletDiv>
+      <S.Nav className={toggleButton ? 'on' : 'off'}>
+        <S.IconDiv className={toggleButton ? 'on' : 'off'}>
+          <div>
             <FaDroplet />
-          </S.FaDropletDiv>
-          <S.LogoLink to={'/'}>Bittersweet Korea</S.LogoLink>
+          </div>
+          <Link to={'/'}>Bittersweet Korea</Link>
         </S.IconDiv>
-
-        <S.Ul toggle={toggleButton}>
-          {pages.map((page) => (
-            <li key={page.id}>
-              <S.PageLink to={page.route}>{page.name}</S.PageLink>
-            </li>
-          ))}
-        </S.Ul>
-
+        <S.NavDiv>
+          <S.Ul className={toggleButton ? 'on' : 'off'}>
+            {pages.map((page) => (
+              <li key={page.id}>
+                <Link to={page.route}>{page.name}</Link>
+              </li>
+            ))}
+          </S.Ul>
+        </S.NavDiv>
         {isLogin ? (
           <Link to={'/login'}>
-            <button onClick={handleOnClick} value={loginUserName}>
+            <S.Button className={toggleButton ? 'on' : 'off'} onClick={handleOnClick} value={loginUserName}>
               {loginUserName}
-            </button>
+            </S.Button>
           </Link>
         ) : (
-          <button onClick={handleOnClick} value={loginUserName}>
+          <S.Button className={toggleButton ? 'on' : 'off'} onClick={handleOnClick} value={loginUserName}>
             🔓LOG-OUT
-          </button>
+          </S.Button>
         )}
         <Link to={'#'} onClick={handleToggleButton}>
-          <S.FaBarsDiv>
+          <S.FaBarsDiv className={toggleButton ? 'on' : 'off'}>
             <FaBars />
           </S.FaBarsDiv>
         </Link>
