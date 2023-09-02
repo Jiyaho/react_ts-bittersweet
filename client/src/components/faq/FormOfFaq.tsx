@@ -1,26 +1,6 @@
 import { BiSolidDownArrow } from 'react-icons/bi';
-import styled from 'styled-components';
-import { colors } from '../../styles/colors';
 import { useState } from 'react';
-
-const Button = styled.button`
-  width: 70%;
-  margin: auto;
-  background-color: ${colors.faqButtonsBg};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  font-size: 20px;
-  color: ${colors.textLight};
-  font-weight: 700;
-  cursor: pointer;
-`;
-const Div = styled.div`
-  text-align: center;
-`;
+import * as S from './FormOfFaq.styles';
 
 interface FormOfFaq {
   question: string;
@@ -35,13 +15,13 @@ function FormOfFaq({ question, answer }: FormOfFaq) {
 
   return (
     <>
-      <Button>
-        <span>Q.{question}</span>
-        <span>
+      <S.Button onClick={handleToggle}>
+        <span className={toggle ? 'on' : 'off'}>Q.{question}</span>
+        <span className={toggle ? 'on' : 'off'}>
           <BiSolidDownArrow />
         </span>
-      </Button>
-      <Div>A.{answer}</Div>
+      </S.Button>
+      <S.Div className={toggle ? 'on' : 'off'}>A.{answer}</S.Div>
     </>
   );
 }
