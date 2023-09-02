@@ -1,25 +1,7 @@
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import KakaoMap from '../../components/findStore/KakaoMap';
-import styled from 'styled-components';
-import { colors } from '../../styles/colors';
-
-const Input = styled.input`
-  width: 100%;
-  height: 40px;
-  text-align: center;
-  border: none;
-  border-bottom: 2px solid ${colors.textMd};
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-bottom: 15px;
-  &:focus {
-    outline: none;
-  }
-  &:focus::placeholder {
-    color: transparent;
-  }
-`;
+import { Input } from './FindStore.styles';
 
 function FindStore() {
   return (
