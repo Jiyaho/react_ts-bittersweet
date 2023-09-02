@@ -11,11 +11,12 @@ export const Section = styled.section`
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 30px;
-    /* &:focus {
-    outline: none;
-    place-content: none;
-    color: transparent;
-  } */
+    &:focus {
+      outline: none;
+    }
+    &:focus::placeholder {
+      color: transparent;
+    }
   }
 
   article {

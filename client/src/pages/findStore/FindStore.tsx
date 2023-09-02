@@ -13,6 +13,12 @@ const Input = styled.input`
   font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 15px;
+  &:focus {
+    outline: none;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
 `;
 
 function FindStore() {
