@@ -12,7 +12,7 @@ const Input = styled.input`
   border-bottom: 2px solid ${colors.textMd};
   font-size: 1.3em;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 `;
 
 function FindStore() {

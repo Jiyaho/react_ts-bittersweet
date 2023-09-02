@@ -3,7 +3,6 @@ import { colors } from '../../../styles/colors';
 
 export const Nav = styled.nav`
   height: 55px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
