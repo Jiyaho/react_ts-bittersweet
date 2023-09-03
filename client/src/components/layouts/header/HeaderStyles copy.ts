@@ -50,9 +50,10 @@ export const IconDiv = styled.div`
 `;
 
 export const NavDiv = styled.div`
+  background-color: pink;
   width: 70%;
   height: 100%;
-  margin: auto;
+  margin-left: -50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -75,11 +76,13 @@ export const NavDiv = styled.div`
     &.on {
       display: flex;
       flex-direction: column;
-      margin: 10% 0% 2% 36%;
-      width: 30%;
-      a {
-        padding: 2.5%;
-      }
+      align-items: center;
+      margin-left: 64%;
+      margin-top: 13%;
+      width: 50%;
+      list-style: none;
+      padding-left: 0;
+      /* padding: 4.5%; */
     }
   }
 `;
@@ -130,11 +133,11 @@ export const Button = styled.button`
   margin-right: -140px;
   @media (max-width: 768px) {
     &.off {
-      margin-right: -40px;
+      margin-right: 0px;
     }
     &.on {
-      margin-right: -36px;
-      margin-top: -177px;
+      margin-left: 17%;
+      margin-top: -236px;
       width: 21%;
     }
   }
@@ -148,7 +151,7 @@ export const FaBarsDiv = styled.div`
   @media (max-width: 768px) {
     display: block;
     &.on {
-      margin-top: -102.5px;
+      margin-top: -132px;
     }
   }
 `;
