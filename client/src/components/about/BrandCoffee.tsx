@@ -16,8 +16,6 @@ function BrandCoffee() {
         <img src={URL + 'coffee-bean1.jpg'} alt="coffeeBean1" />
       </S.FirstDiv>
 
-      <hr />
-
       <S.Divs>
         <img src={URL + 'coffee-bean2.jpg'} alt="coffeeBean2" />
         <div>

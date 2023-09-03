@@ -35,4 +35,9 @@ export const Article = styled.article`
     margin: auto;
     margin-bottom: 100px;
   }
+  @media (max-width: 768px) {
+    img {
+      width: 95%;
+    }
+  }
 `;

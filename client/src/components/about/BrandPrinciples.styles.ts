@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 export const Article = styled.article`
-  /* margin-top: 20px;
-  top: 150px; */
-
   h1 {
     font-size: 2em;
     text-align: center;
@@ -37,5 +34,10 @@ export const Article = styled.article`
     display: block;
     margin: auto;
     margin-bottom: 100px;
+  }
+  @media (max-width: 768px) {
+    img {
+      width: 85%;
+    }
   }
 `;

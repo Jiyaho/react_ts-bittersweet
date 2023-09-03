@@ -42,6 +42,12 @@ export const FirstDiv = styled.div`
     width: 950px;
     margin: 30px 0px 50px 0px;
   }
+  @media (max-width: 768px) {
+    img {
+      width: 85%;
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 export const Divs = styled.div`
@@ -65,6 +71,14 @@ export const Divs = styled.div`
     }
     p {
       font-size: 0.9em;
+    }
+  }
+  @media (max-width: 768px) {
+    gap: -0px;
+    margin-top: -55px;
+    margin-bottom: -30px;
+    img {
+      width: 85%;
     }
   }
 `;
