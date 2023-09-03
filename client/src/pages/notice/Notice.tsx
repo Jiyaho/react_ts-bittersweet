@@ -3,6 +3,7 @@ import ScrollButton from '../../components/atoms/ScrollButton';
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import NoticeTable from '../../components/notice/NoticeTable';
+import { Button } from './Notice.styles';
 
 function Notice() {
   return (
@@ -11,7 +12,7 @@ function Notice() {
       <ScrollButton />
       <section>
         <Link to={'/notice-write'}>
-          <button>📝 WRITE</button>
+          <Button>📝 WRITE</Button>
         </Link>
         <article>
           <NoticeTable />
