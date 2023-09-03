@@ -24,7 +24,7 @@ export const Nav = styled.nav`
 export const IconDiv = styled.div`
   color: ${colors.accent};
   display: flex;
-  width: 40vh;
+  width: 20vh;
 
   @media (max-width: 768px) {
     width: 73vh;
@@ -52,14 +52,13 @@ export const IconDiv = styled.div`
 export const NavDiv = styled.div`
   width: 70%;
   height: 100%;
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 9%;
   a {
-    font-size: 1.15em;
+    font-size: 1.1em;
     text-decoration: none;
     color: ${colors.textDark};
     &:hover {
@@ -78,64 +77,25 @@ export const NavDiv = styled.div`
       margin: 10% 0% 2% 36%;
       width: 30%;
       a {
-        padding: 2.5%;
+        padding: 4%;
       }
     }
   }
 `;
-// export const Ul = styled.ul`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   gap: 8%;
-//   list-style: none;
-//   padding-left: 0;
-
-//   li {
-//     a {
-//       font-size: 1em;
-//       text-decoration: none;
-//       color: ${colors.textDark};
-//       &:hover {
-//         color: ${colors.accent};
-//       }
-//     }
-//   }
-//   @media (max-width: 768px) {
-//     &.off {
-//       display: none;
-//       color: ${colors.accent};
-//       position: absolute;
-//     }
-//     &.on {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       margin-left: 64%;
-//       margin-top: 13%;
-//       width: 50%;
-//       list-style: none;
-//       padding-left: 0;
-//       li {
-//         padding: 4.5%;
-//       }
-//     }
-//   }
-// `;
 
 export const Button = styled.button`
   border: none;
   background-color: transparent;
-  width: 35%;
-  margin-right: -140px;
+  width: 100px;
   @media (max-width: 768px) {
     &.off {
-      margin-right: -40px;
+      width: 170px;
+      margin-right: 7px;
     }
     &.on {
       margin-right: -36px;
-      margin-top: -177px;
-      width: 21%;
+      margin-top: -198px;
+      width: 90px;
     }
   }
 `;
@@ -148,7 +108,7 @@ export const FaBarsDiv = styled.div`
   @media (max-width: 768px) {
     display: block;
     &.on {
-      margin-top: -102.5px;
+      margin-top: -112.5px;
     }
   }
 `;
