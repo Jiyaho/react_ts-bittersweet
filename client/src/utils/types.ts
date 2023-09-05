@@ -45,3 +45,9 @@ export interface NoticeTableBodyType {
   writer: string;
   date: string;
 }
+
+export interface RegisterType {
+  name: string;
+  email: string;
+  password: string;
+}
