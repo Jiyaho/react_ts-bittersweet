@@ -39,8 +39,7 @@ export interface FaqType {
 
 export interface NoticeTableBodyType {
   number: string;
-  id: string;
-  onClick: React.MouseEventHandler<HTMLAnchorElement>;
+  _id: string;
   title: string;
   writer: string;
   date: string;

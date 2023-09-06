@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const https = require('https');
@@ -8,6 +7,9 @@ const httpsPort = 8080;
 const app = express();
 const mongoose = require('mongoose');
 const config = require('./config/key');
+const { User } = require('./models/User');
+const { Posting } = require('./models/Posting');
+const { auth } = require('./middleware/auth');
 
 // 서버 정상 연결 체크
 app.get('/', (req, res) => res.send('Server check!'));
@@ -55,14 +57,18 @@ app.use(cookieParser());
 
 // Mongoose 통해 MongoDB 연결
 // mongoURI는 config 폴더에 적용 환경에 따른 환경변수 처리
-const MongoConnect = async () => {
-  await mongoose
-    .set('strictQuery', false)
-    .connect(config.mongoURI)
-    .then(() => console.log('mongoDB Connected..'))
-    .catch((err) => console.log(err));
-};
-MongoConnect();
+// const MongoConnect = async () => {
+//   await mongoose
+//     .set('strictQuery', false)
+//     .connect(config.mongoURI)
+//     .then(() => console.log('mongoDB Connected..'))
+//     .catch((err) => console.log(err));
+// };
+// MongoConnect();
+mongoose
+  .connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB Connected...'))
+  .catch((err) => console.error(err));
 
 // ===== User Register =====
 app.post('/api/users/register', (req, res) => {
@@ -141,16 +147,47 @@ app.get('/api/users', auth, (req, res) => {
 });
 
 // ===== New Posting =====
-app.post('/api/posting', (req, res) => {
+// app.post('/api/posts', (req, res) => {
+//   const posting = new Posting(req.body);
+//   posting.save((err, result) => {
+//     if (err) return res.json({ postSuccess: false, err });
+//     return res.status(200).json({ postSuccess: true, result });
+//   });
+// });
+
+// app.post('/api/posts', (req, res) => {
+//   const posting = new Posting(req.body);
+//   posting
+//     .save()
+//     .then((result) => {
+//       return res.status(200).json({ postSuccess: true, result });
+//     })
+//     .catch((err) => {
+//       return res.json({ postSuccess: false, err });
+//     });
+// });
+
+// 게시물 저장 엔드포인트
+app.post('/api/posts', (req, res) => {
+  // const { writer, title, content } = req.body;
+  // 게시물 모델 생성
   const posting = new Posting(req.body);
-  posting.save((err, result) => {
-    if (err) return res.json({ postSuccess: false, err });
-    return res.status(200).json({ postSuccess: true, result });
-  });
+
+  // 게시물 저장
+  posting
+    .save()
+    .then((result) => {
+      console.log('게시물 저장 성공:', result);
+      return res.status(200).json({ postSuccess: true, result });
+    })
+    .catch((err) => {
+      console.error('게시물 저장 실패:', err);
+      return res.status(500).json({ postSuccess: false, error: err.message });
+    });
 });
 
 // ===== Get Posts =====
-app.get('/api/posting', (req, res) => {
+app.get('/api/posts', (req, res) => {
   Posting.find((err, result) => {
     if (err) return res.json({ getPostsSuccess: false, err });
     return res.status(200).send(result);
@@ -158,7 +195,7 @@ app.get('/api/posting', (req, res) => {
 });
 
 // ===== Posting Update =====
-app.patch('/api/posting/:_id', (req, res) => {
+app.patch('/api/posts/:_id', (req, res) => {
   Posting.findByIdAndUpdate({ _id: req.params._id }, req.body, (err, result) => {
     if (err) return res.json({ editSuccess: false, err });
     return res.status(200).json({ editSuccess: true, result });
@@ -166,7 +203,7 @@ app.patch('/api/posting/:_id', (req, res) => {
 });
 
 // ===== Posting Delete =====
-app.delete('/api/posting/:_id', (req, res) => {
+app.delete('/api/posts/:_id', (req, res) => {
   Posting.findByIdAndDelete({ _id: req.params._id }, (err, result) => {
     if (err) return res.json({ deleteSuccess: false, err });
     return res.status(200).json({ deleteSuccess: true, result });

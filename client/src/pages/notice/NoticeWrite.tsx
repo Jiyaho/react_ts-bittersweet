@@ -3,27 +3,41 @@ import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import { useNavigate } from 'react-router-dom';
 import { Section } from './NoticeWrite.styles';
+import { newPosting } from '../../features/posting';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../features/store';
 
 function NoticeWrite() {
   const navigate = useNavigate();
   const [writer, setWriter] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const dispatch: AppDispatch = useDispatch();
 
-  const onChangeWriter = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setWriter(target.value);
+  const onChangeWriter = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setWriter(e.target.value);
   };
-  const onChangeTitle = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setWriter(target.value);
+  const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(e.target.value);
   };
-  const onChangeContent = (e: React.ChangeEvent) => {
-    const target = e.target as HTMLInputElement;
-    setWriter(target.value);
+  const onChangeContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setContent(e.target.value);
   };
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const body = {
+      writer,
+      title,
+      content,
+    };
+    try {
+      await dispatch(newPosting(body));
+      alert('등록 완료!');
+      navigate('/notice');
+    } catch (error) {
+      console.log(error);
+      alert('Error: 글이 등록되지 않았습니다.');
+    }
   };
   const onClickCancle = () => {
     if (window.confirm('등록을 취소 하시겠습니까?')) {
