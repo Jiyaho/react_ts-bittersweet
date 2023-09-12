@@ -50,3 +50,13 @@ export interface RegisterType {
   email: string;
   password: string;
 }
+
+export interface PostingType {
+  writer: string;
+  title: string;
+  content: string;
+  date?: any;
+  view?: string;
+  id?: string;
+  _id?: string;
+}

@@ -52,5 +52,6 @@
   "devDependencies": {
     "@tanstack/react-query-devtools": "^4.33.0",
     "@types/styled-components": "^5.1.26"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

@@ -1,4 +1,6 @@
 export const baseUrl = process.env.PUBLIC_URL;
+export const postingsUrl = `${process.env.REACT_APP_HOST}/api/postings`;
+export const usersUrl = `${process.env.REACT_APP_HOST}/api/users`;
 
 export const pages = [
   {

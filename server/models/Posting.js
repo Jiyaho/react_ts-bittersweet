@@ -11,7 +11,7 @@ const postingSchema = new mongoose.Schema({
   },
   title: {
     type: String,
-    maxlenth: 30,
+    maxlength: 30,
     required: true,
   },
   content: {
@@ -31,6 +31,7 @@ const postingSchema = new mongoose.Schema({
 
 postingSchema.plugin(AutoIncrement, { inc_field: 'id' });
 
-const Posting = mongoose.model('Posting', postingSchema);
+// module.exports = mongoose.model('Posting', postingSchema);
 
+const Posting = mongoose.model('Posting', postingSchema);
 module.exports = { Posting };

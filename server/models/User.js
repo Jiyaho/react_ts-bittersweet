@@ -110,6 +110,8 @@ userSchema.statics.findByToken = (token, callback) => {
 };
 
 // Model로 Schema를 감싸준다.
-const User = mongoose.model('User', userSchema);
+// const User = mongoose.model('User', userSchema);
 
-module.exports = { User };
+// module.exports = { User };
+
+module.exports = mongoose.model('User', userSchema);

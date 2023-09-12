@@ -1,32 +1,52 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import { Section } from './NoticeDetail.styles';
+import { useDeletePosting, useFetchPosting } from '../../Api/PostingsApi';
 
 function NoticeDetail() {
   const navigate = useNavigate();
+  const { id } = useParams(); // 게시글 id
+  const deletePosting = useDeletePosting();
+  const { data: posting, isLoading, isError } = useFetchPosting(id);
+
+  if (!posting) {
+    return <div>Posting is not found..</div>;
+  }
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>Error fetching data</div>;
+  }
+
+  // 삭제 버튼 클릭 시 해당 글 삭제 후 이전 화면으로 이동
+  const handleDelete = () => {
+    deletePosting(id);
+  };
+
   return (
     <Layout>
       <Title title="NOTICE DETAIL" />
       <Section>
-        <table>
+        <table key={posting._id}>
           <thead>
             <tr>
-              <th>글 제목입니다.</th>
-              <th>작성자</th>
-              <th>2023-09-04</th>
+              <th>{posting.title}</th>
+              <th>{posting.writer}</th>
+              <th>{posting.date.slice(0, 10)}</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>글 내용입니다.</td>
+              <td>{posting.content}</td>
             </tr>
           </tbody>
         </table>
         <div>
           <button onClick={() => navigate(-1)}>목록</button>
-          <button onClick={() => navigate(`/notice-edit`)}>수정</button>
-          <button>삭제</button>
+          <button onClick={() => navigate(`/notice-edit/${id}`)}>수정</button>
+          <button onClick={handleDelete}>삭제</button>
         </div>
       </Section>
     </Layout>
