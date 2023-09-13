@@ -1,4 +1,4 @@
-import { Table } from './FormOfNotice.styles';
+import { Table } from './NoticeTable.styles';
 import { useFetchAllPostings } from '../../Api/PostingsApi';
 import { Link } from 'react-router-dom';
 
@@ -39,20 +39,6 @@ function NoticeTable() {
           </tr>
         </tbody>
       ))}
-      {/* <tbody>
-        <tr>
-          <td>2</td>
-          <td>제목입니다</td>
-          <td>Janet</td>
-          <td>2023-09-04</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>제목입니다</td>
-          <td>Janet</td>
-          <td>2023-09-04</td>
-        </tr>
-      </tbody> */}
     </Table>
   );
 }

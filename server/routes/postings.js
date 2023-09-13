@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// const Posting = require('../models/Posting');
 const { Posting } = require('../models/Posting');
 
 // router.get('/', (req, res) => res.send({ test: 'postings routes is connected..' }));
@@ -10,40 +9,6 @@ router.post('/', async (req, res) => {
     const posting = new Posting(req.body);
     await posting.save();
     res.status(201).send(posting);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-// router.post('/', async (req, res) => {
-//   try {
-//     const posting = new Posting(req.body);
-//     const result = await posting.save();
-//     res.status(201).json({
-//       postSuccess: true,
-//       result,
-//     });
-//   } catch (error) {
-//     return res.json({ postSuccess: false, error });
-//   }
-// });
-
-// Find All Postings
-router.get('/', async (req, res) => {
-  try {
-    const postings = await Posting.find({});
-    res.status(200).send(postings);
-  } catch (error) {
-    res.status(500).json({ getPostsSuccess: false, error });
-  }
-});
-
-// Find Posting by PostingID
-router.get('/:_id', async (req, res) => {
-  try {
-    const posting = await Posting.findById(req.params._id);
-    if (!posting) return res.status(404).send({ err: 'Posting is not found' });
-    res.send(posting);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -70,6 +35,27 @@ router.delete('/:_id', async (req, res) => {
     res.status(204).send();
   } catch (error) {
     res.status(500).send({ error });
+  }
+});
+
+// Find All Postings
+router.get('/', async (req, res) => {
+  try {
+    const postings = await Posting.find({});
+    res.status(200).send(postings);
+  } catch (error) {
+    res.status(500).json({ getPostsSuccess: false, error });
+  }
+});
+
+// Find Posting by PostingID
+router.get('/:_id', async (req, res) => {
+  try {
+    const posting = await Posting.findById(req.params._id);
+    if (!posting) return res.status(404).send({ err: 'Posting is not found' });
+    res.send(posting);
+  } catch (error) {
+    res.status(500).send(error);
   }
 });
 

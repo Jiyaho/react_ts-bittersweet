@@ -44,11 +44,9 @@ function NoticeEdit() {
   };
 
   const onClickCancle = () => {
-    if (window.confirm('등록을 취소 하시겠습니까?') === true) {
+    if (window.confirm('등록을 취소 하시겠습니까?')) {
       navigate('/notice');
-    } else {
-      return;
-    }
+    } else return;
   };
 
   if (!posting) {
@@ -69,7 +67,6 @@ function NoticeEdit() {
           <input type="text" placeholder={posting.writer} required onChange={writerHandler} value={writer} />
           <input type="text" placeholder={posting.title} required onChange={titleHandler} value={title} />
           <textarea cols={50} rows={10} placeholder={posting.content} onChange={contentHandler} value={content} />
-
           <div>
             <button onClick={onClickCancle}>취소</button>
             <button type="submit">등록</button>

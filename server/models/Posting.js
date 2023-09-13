@@ -31,7 +31,6 @@ const postingSchema = new mongoose.Schema({
 
 postingSchema.plugin(AutoIncrement, { inc_field: 'id' });
 
-// module.exports = mongoose.model('Posting', postingSchema);
-
+// 모델 생성
 const Posting = mongoose.model('Posting', postingSchema);
 module.exports = { Posting };

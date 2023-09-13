@@ -29,7 +29,9 @@ export function useDeletePosting() {
   // useMutation 훅을 사용하여 삭제 작업을 정의
   const { mutate } = useMutation(deletePosting, {
     onSuccess: () => {
-      navigate(-1);
+      if (window.confirm('글을 삭제 하시겠습니까?')) {
+        navigate('/notice');
+      } else return;
     },
   });
 

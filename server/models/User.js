@@ -42,14 +42,14 @@ const userSchema = mongoose.Schema({
 });
 
 // // Save 하기 전 동작할 함수: pre
-// userSchema.pre('save', function (next) {
+// userSchema.pre('save', (next) => {
 //   let user = this; // userSchema의 객체들을 가리킴
 
 //   // 유저가 암호 변경할 때만 실행하는 코드
 //   if (user.isModified('password')) {
-//     bcrypt.genSalt(saltRounds, function (err, salt) {
+//     bcrypt.genSalt(saltRounds, (err, salt) => {
 //       if (err) return next(err);
-//       bcrypt.hash(user.password, salt, function (err, hash) {
+//       bcrypt.hash(user.password, salt, (err, hash) => {
 //         if (err) return next(err);
 
 //         // 성공 시 유저의 plain 암호를 hash회된 암호로 표출
@@ -59,25 +59,6 @@ const userSchema = mongoose.Schema({
 //     });
 //   }
 // });
-
-// Save 하기 전 동작할 함수: pre
-userSchema.pre('save', (next) => {
-  let user = this; // userSchema의 객체들을 가리킴
-
-  // 유저가 암호 변경할 때만 실행하는 코드
-  if (user.isModified('password')) {
-    bcrypt.genSalt(saltRounds, (err, salt) => {
-      if (err) return next(err);
-      bcrypt.hash(user.password, salt, (err, hash) => {
-        if (err) return next(err);
-
-        // 성공 시 유저의 plain 암호를 hash회된 암호로 표출
-        user.password = hash;
-        next();
-      });
-    });
-  }
-});
 
 // jwt 이용하여 token 생성
 userSchema.methods.generateToken = (callback) => {
@@ -95,6 +76,29 @@ userSchema.methods.generateToken = (callback) => {
   });
 };
 
+//Login요청 시, 클라이언트가 요청한 비번과 DB에 있는 데이터가 일치하는지 비교하는 method생성: comparePassword
+userSchema.methods.comparePassword = function (plainPassword, cb) {
+  //plainPassword와 암호화한 hashedPassword가 같은지 체크
+  bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+    //plainPassword를 bcrypt를 사용하여 다시 암호화 후 DB의 hashedPassword와 일치 여부 체크
+    if (err) return cb(err); //false일때
+    cb(null, isMatch); //true일때
+  });
+};
+
+userSchema.methods.generateToken = function (cb) {
+  //jsonwebtoken을 이용하여 token생성
+  let user = this;
+  let token = jwt.sign(user._id.toHexString(), 'secretToken');
+  //user._id: DB에 있는 유저들의 _id값임. 이 값을 String으로 변환.
+  //user._id + 'secretToken' = token
+  user.token = token;
+  user.save(function (err, user) {
+    if (err) return cb(err);
+    cb(null, user); //save 성공한 경우
+  });
+};
+
 // token decode 작업
 // 1. decode하면 user._id 값을 얻음
 // 2. user._id를 통해 유저를 찾고 클라이언트에서 가져온 토큰과 DB에 보관된 토큰의 일치 여부 확인
@@ -109,9 +113,7 @@ userSchema.statics.findByToken = (token, callback) => {
   });
 };
 
-// Model로 Schema를 감싸준다.
-// const User = mongoose.model('User', userSchema);
+// Model 생성
+const User = mongoose.model('User', userSchema);
 
-// module.exports = { User };
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = { User };

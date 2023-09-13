@@ -26,6 +26,20 @@ export const Table = styled.table`
   th:nth-child(3) {
     width: 24%;
   }
+  tbody {
+    tr {
+      a {
+        text-decoration: none;
+        color: ${colors.textDark};
+        &:hover {
+          color: ${colors.accent};
+        }
+      }
+      td:nth-child(2) {
+        text-align: left;
+      }
+    }
+  }
   @media (max-width: 768px) {
     width: 90%;
     th {

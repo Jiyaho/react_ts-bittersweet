@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { postingsUrl } from '../utils/constants';
 
 interface PostingState {
   postSuccess?: boolean;
@@ -14,7 +15,7 @@ const initialState: PostingState = {
 export const newPosting = createAsyncThunk('posting/newPosting', async (dataToSubmit: any, thunkAPI) => {
   try {
     console.log(dataToSubmit);
-    const response = await axios.post(`${process.env.REACT_APP_HOST}/api/posts`, dataToSubmit);
+    const response = await axios.post(`${postingsUrl}`, dataToSubmit);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error);

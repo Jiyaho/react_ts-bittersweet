@@ -1,53 +1,100 @@
 const express = require('express');
 const router = require('express').Router();
-const User = require('../models/User');
+const { User } = require('../models/User');
 const { auth } = require('../middleware/auth');
 const cookieParser = require('cookie-parser');
 const app = express();
 
 router.use(cookieParser());
 
-// ===== User Register =====
-router.post('/register', (req, res) => {
-  // 회원가입 시 유저 데이터 DB에 저장
-  const user = new User(req.body);
-  user.save((err, userInfo) => {
-    if (err) return res.json({ success: false, err });
-    return res.statusMessage(200).json({ success: true });
-  });
+// User Register (Sign-up)
+router.post('/register', async (req, res) => {
+  try {
+    // 이메일 중복 여부 확인 과정
+    const checkUser = await User.findOne({ email: req.body.email });
+    // 이미 존재하는 이메일인 경우 409(Conflict) 코드 전송
+    if (checkUser) {
+      res.status(409).send({ success: false, message: '이미 존재하는 이메일 주소입니다.' });
+      return;
+    }
+
+    const user = new User(req.body);
+    await user.save();
+    res.status(201).send({ success: true });
+  } catch (error) {
+    res.status(500).send({ success: false, error: error.message });
+  }
 });
 
-// ===== User Login =====
-router.post('/login', (req, res) => {
-  // client에서 요청한 이메일을 DB에 있는지 탐색
-  User.findOne({ email: req.body.email }, (err, user) => {
+// User Login
+// router.post('/login', (req, res) => {
+//   // client에서 요청한 이메일을 DB에 있는지 탐색
+//   User.findOne({ email: req.body.email }, (err, user) => {
+//     // DB에 이메일 없는 경우
+//     if (!user) {
+//       return res.status(404).send({
+//         loginSuccess: false,
+//         message: '제공된 이메일에 해당하는 유저가 없습니다.',
+//       });
+//     }
+
+//     // DB에 이메일 있는 경우: 비밀번호도 일치하는지 확인
+//     user.comparePassword(req.body.password, (err, isMatch) => {
+//       // 비밀번호 불일치한 경우
+//       if (!isMatch) {
+//         return res.json({
+//           loginSuccess: false,
+//           message: '비밀번호가 틀렸습니다.',
+//         });
+//       }
+
+//       // 비밀번호도 일치한 경우: Token 생성
+//       user.generateToken((err, user) => {
+//         if (err) return res.status(400).send(err);
+
+//         // cookieParser를 이용해 토큰을 쿠키에 저장
+//         res.cookie('x_auth', user.token).status(200).json({ loginSuccess: true, user });
+//       });
+//     });
+//   });
+// });
+
+// User Login
+router.post('/login', async (req, res) => {
+  try {
+    // client에서 요청한 이메일을 DB에 있는지 탐색
+    const user = await User.findOne({ email: req.body.email });
+
     // DB에 이메일 없는 경우
     if (!user) {
-      return res.json({
+      return res.status(404).send({
         loginSuccess: false,
         message: '제공된 이메일에 해당하는 유저가 없습니다.',
       });
     }
 
-    // DB에 이메일 있는 경우: 비밀번호도 일치하는지 확인
-    user.comparePassword(req.body.password, (err, isMatch) => {
-      // 비밀번호 불일치한 경우
-      if (!isMatch) {
-        return res.json({
-          loginSuccess: false,
-          message: '비밀번호가 틀렸습니다.',
-        });
-      }
+    // 비밀번호 일치 여부를 비동기로 확인
+    const isMatch = await user.comparePassword(req.body.password);
 
-      // 비밀번호도 일치한 경우: Token 생성
-      user.generateToken((err, user) => {
-        if (err) return res.status(400).send(err);
-
-        // cookieParser를 이용해 토큰을 쿠키에 저장
-        res.cookie('x_auth', user.token).status(200).json({ loginSuccess: true, userId: user._id });
+    // 비밀번호 불일치한 경우
+    if (!isMatch) {
+      return res.json({
+        loginSuccess: false,
+        message: '비밀번호가 틀렸습니다.',
       });
+    }
+
+    // 비밀번호도 일치한 경우: Token 생성
+    user.generateToken((err, user) => {
+      if (err) return res.status(400).send(err);
+
+      // cookieParser를 이용해 토큰을 쿠키에 저장
+      res.cookie('x_auth', user.token).status(200).json({ loginSuccess: true, userName: user.name });
     });
-  });
+  } catch (error) {
+    console.error('An error occurred:', error);
+    res.status(500).send(error);
+  }
 });
 
 // ===== User Authentication =====

@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import { useNavigate } from 'react-router-dom';
 import { Section } from './NoticeWrite.styles';
-// import { newPosting } from '../../features/posting';
-// import { useDispatch } from 'react-redux';
-// import { AppDispatch } from '../../features/store';
+import { newPosting } from '../../features/posting';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../features/store';
 import axios from 'axios';
 import { postingsUrl } from '../../utils/constants';
 
@@ -14,7 +14,7 @@ function NoticeWrite() {
   const [writer, setWriter] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  // const dispatch: AppDispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const onChangeWriter = (e: React.ChangeEvent<HTMLInputElement>) => {
     setWriter(e.target.value);
   };
@@ -24,24 +24,21 @@ function NoticeWrite() {
   const onChangeContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
   };
-  const handleSubmit = async (e: React.FormEvent) => {
+  const onSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
       const body = {
         writer,
         title,
         content,
       };
-
-      console.log(body);
       const response = await axios.post(postingsUrl, body);
       if (response.status === 201) {
         alert('글이 등록되었습니다.');
         navigate('/notice');
       }
     } catch (error) {
-      console.log('글이 등록 에러: ' + error);
+      console.log('글 등록 에러: ' + error);
     }
   };
   // const handleSubmit = async (e: React.FormEvent) => {
@@ -70,7 +67,7 @@ function NoticeWrite() {
     <Layout>
       <Title title="WRITE" />
       <Section>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onSubmitHandler}>
           <input type="text" placeholder="이름을 입력해 주세요." required max="10" onChange={onChangeWriter} value={writer} />
           <input type="text" placeholder="제목을 입력해 주세요." required max="10" onChange={onChangeTitle} value={title} />
           <textarea cols={50} rows={10} required placeholder="내용을 입력해 주세요." onChange={onChangeContent} value={content} />
