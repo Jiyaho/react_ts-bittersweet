@@ -15,20 +15,3 @@ export function useAuth() {
     return response.data;
   });
 }
-
-// export function useAuth() {
-//   const queryKey = ['auth'];
-//   const dispatch = useDispatch();
-
-//   const { data } = useQuery(queryKey, async () => {
-//     const response = await axios.get(`${usersUrl}/auth`, { withCredentials: true });
-//     const userData = response.data;
-
-//     // 사용자 정보를 Redux 스토어에 저장
-//     dispatch(setUserAuth({ isAuthenticated: userData.isAuthenticated, userName: userData.userName }));
-
-//     return userData;
-//   });
-
-//   return data;
-// }
