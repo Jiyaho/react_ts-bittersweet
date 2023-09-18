@@ -44,7 +44,7 @@ function Register() {
         email,
         password,
       };
-      const response = await axios.post(`${usersUrl}/register`, body);
+      const response = await axios.post(`${usersUrl}/register`, body, { withCredentials: true });
       if (response.status === 201) {
         alert('회원가입 완료!');
         navigate('/');

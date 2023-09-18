@@ -11,6 +11,14 @@ export const Nav = styled.nav`
   padding: 5px 20px;
   position: sticky;
   top: 0;
+  a {
+    text-decoration: none;
+    color: ${colors.textDark};
+  }
+  button {
+    cursor: pointer;
+    font-size: 1.2em;
+  }
   @media (max-width: 768px) {
     &.off {
       height: 55px;
@@ -21,7 +29,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const IconDiv = styled.div`
+export const LogoDiv = styled.div`
   color: ${colors.accent};
   display: flex;
   width: 20vh;
@@ -49,7 +57,7 @@ export const IconDiv = styled.div`
   }
 `;
 
-export const NavDiv = styled.div`
+export const NavPagesDiv = styled.div`
   width: 70%;
   height: 100%;
   display: flex;
@@ -83,19 +91,23 @@ export const NavDiv = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  border: none;
-  background-color: transparent;
-  width: 100px;
+export const LoginDiv = styled.div`
+  button {
+    border: none;
+    background-color: transparent;
+    width: 100px;
+  }
+
   @media (max-width: 768px) {
     &.off {
       width: 170px;
-      margin-right: 7px;
+      margin-right: 17.5px;
+      overflow: none;
     }
     &.on {
-      margin-right: -36px;
-      margin-top: -198px;
-      width: 90px;
+      margin-right: -40px;
+      margin-top: -214px;
+      width: 110px;
     }
   }
 `;
@@ -107,8 +119,10 @@ export const FaBarsDiv = styled.div`
   display: none;
   @media (max-width: 768px) {
     display: block;
+    &.off {
+    }
     &.on {
-      margin-top: -112.5px;
+      margin-top: -122px;
     }
   }
 `;

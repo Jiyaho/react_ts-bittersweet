@@ -3,7 +3,7 @@ import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import { useNavigate } from 'react-router-dom';
 import { Section } from './NoticeWrite.styles';
-import { newPosting } from '../../features/posting';
+import { newPosting } from '../../features/postingSlice';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../features/store';
 import axios from 'axios';
