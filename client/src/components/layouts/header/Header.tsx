@@ -27,6 +27,7 @@ function Header() {
           setUserAuth({
             isAuth: false, // 인증 여부: false
             name: null, // 사용자 이름 null로 초기화
+            isAdmin: false,
           })
         );
         window.location.reload();
@@ -49,8 +50,17 @@ function Header() {
   };
 
   useEffect(() => {
-    // console.log(authData);
     getAuthState();
+    // 인증된 사용자(로그인한 유저) 상태를 dispatch하여 업데이트
+    if (authData) {
+      dispatch(
+        setUserAuth({
+          isAuth: authData.isAuth,
+          name: authData.name,
+          isAdmin: authData.isAdmin,
+        })
+      );
+    }
   }, [authData]);
 
   return (
