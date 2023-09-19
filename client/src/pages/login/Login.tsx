@@ -2,19 +2,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import { Section } from './Login.styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usersUrl } from '../../utils/constants';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setUserAuth } from '../../features/userSlice';
-import { useAuth } from '../../Api/UsersApi';
+import { RootState } from '../../features/store';
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { data: authData } = useAuth();
+  const isAuth = useSelector((state: RootState) => state.user.isAuth);
 
   const onChangeEmail = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
@@ -33,11 +33,11 @@ function Login() {
       };
       const response = await axios.post(`${usersUrl}/login`, body, { withCredentials: true });
       if (response.data.loginSuccess) {
-        // 로그인 성공 시 사용자 이름 저장
         dispatch(
           setUserAuth({
-            isAuth: authData.isAuth,
-            name: authData.name,
+            isAuth: true,
+            name: response.data.userName,
+            isAdmin: response.data.role === 0 ? false : true,
           })
         );
         navigate('/');
@@ -46,6 +46,11 @@ function Login() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    // 인증된 사용자(로그인한 유저)는 로그인 페이지 접속 시 홈으로 리다이렉트
+    if (isAuth) navigate('/');
+  }, [isAuth]);
   return (
     <Layout>
       <Title title="LOGIN" />

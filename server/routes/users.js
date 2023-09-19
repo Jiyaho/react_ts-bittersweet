@@ -40,7 +40,7 @@ router.post('/login', (req, res) => {
         res
           .cookie('x_auth', user.token) //cookie에 토큰을 "x_auth"라는 이름으로 넣음
           .status(200) //성공한 경우
-          .json({ loginSuccess: true, userId: user._id, userName: user.name });
+          .json({ loginSuccess: true, userId: user._id, userName: user.name, role: user.role });
       });
     });
   });
