@@ -15,6 +15,7 @@ import Notice from './pages/notice/Notice';
 import NoticeDetail from './pages/notice/NoticeDetail';
 import NoticeWrite from './pages/notice/NoticeWrite';
 import NoticeEdit from './pages/notice/NoticeEdit';
+import MyPage from './pages/myPage/MyPage';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/notice-detail/:id" element={<NoticeDetail />} />
         <Route path="/notice-write" element={<NoticeWrite />} />
         <Route path="/notice-edit/:id" element={<NoticeEdit />} />
+        <Route path="/mypage" element={<MyPage />} />
       </Routes>
     </BrowserRouter>
   );
