@@ -1,10 +1,12 @@
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Section } from './Register.styles';
 import { usersUrl } from '../../utils/constants';
 import axios, { AxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../features/store';
 
 function Register() {
   const navigate = useNavigate();
@@ -12,6 +14,7 @@ function Register() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const isAuth = useSelector((state: RootState) => state.user.isAuth);
 
   const onChangeEmail = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
@@ -61,6 +64,10 @@ function Register() {
       }
     }
   };
+  useEffect(() => {
+    // 인증된 사용자(로그인한 유저)는 register 페이지 접속 시 홈으로 리다이렉트
+    if (isAuth) navigate('/');
+  }, [isAuth]);
   return (
     <Layout>
       <Title title="REGISTER" />
