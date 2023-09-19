@@ -64,7 +64,7 @@ function NoticeEdit() {
       <Title title="NOTICE EDIT" />
       <Section>
         <form onSubmit={editSubmitHandler}>
-          <input type="text" placeholder={posting.writer} readOnly onChange={writerHandler} value={writer} />
+          <input type="text" placeholder={posting.writer} required readOnly onChange={writerHandler} value={writer} />
           <input type="text" placeholder={posting.title} required onChange={titleHandler} value={title} />
           <textarea cols={50} rows={10} placeholder={posting.content} onChange={contentHandler} value={content} />
           <div>

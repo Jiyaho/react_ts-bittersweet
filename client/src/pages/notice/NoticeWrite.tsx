@@ -56,7 +56,7 @@ function NoticeWrite() {
       <Title title="WRITE" />
       <Section>
         <form onSubmit={onSubmitHandler}>
-          <input type="text" max="10" onChange={onChangeWriter} value={authUser.name} readOnly />
+          <input type="text" max="10" onChange={onChangeWriter} required value={authUser.name} readOnly />
           <input type="text" placeholder="제목을 입력해 주세요." required max="10" onChange={onChangeTitle} value={title} />
           <textarea cols={50} rows={10} required placeholder="내용을 입력해 주세요." onChange={onChangeContent} value={content} />
           <div>
