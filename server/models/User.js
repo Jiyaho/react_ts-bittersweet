@@ -12,7 +12,7 @@ const saltRounds = 10;
 const userSchema = mongoose.Schema({
   name: {
     type: String,
-    maxlength: 15,
+    maxlength: 10,
     required: true,
   },
   email: {
@@ -23,6 +23,7 @@ const userSchema = mongoose.Schema({
   },
   password: {
     type: String,
+    maxlength: 10,
     required: true,
   },
   // role: 사용자 권한 분류
