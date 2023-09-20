@@ -23,7 +23,6 @@ const userSchema = mongoose.Schema({
   },
   password: {
     type: String,
-    maxlength: 10,
     required: true,
   },
   // role: 사용자 권한 분류
