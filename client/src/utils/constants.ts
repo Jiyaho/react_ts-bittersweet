@@ -33,6 +33,11 @@ export const pages = [
     route: '/notice',
     name: 'NOTICE',
   },
+  {
+    id: 7,
+    route: '/mypage',
+    name: 'MYPAGE',
+  },
 ];
 
 export const menuNav = [

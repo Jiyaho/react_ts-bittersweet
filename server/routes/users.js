@@ -87,4 +87,48 @@ router.delete('/delete-account', auth, async (req, res) => {
     return res.status(500).json({ success: false, error: error.message });
   }
 });
+
+//=====회원 정보 수정=====
+router.patch('/update-profile', auth, async (req, res) => {
+  try {
+    // 클라이언트로부터 업데이트할 정보를 받아옴
+    const updates = req.body;
+
+    // 현재 사용자 ID를 사용하여 사용자 정보를 찾음
+    const user = await User.findByIdAndUpdate(req.user._id, updates, {
+      new: true, // 업데이트 후의 정보를 반환하도록 설정
+    });
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: '사용자를 찾을 수 없습니다.' });
+    }
+
+    // 업데이트된 사용자 정보를 응답으로 반환
+    return res.status(200).json({ success: true, user });
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+//=====회원 정보 수정 시 중복 이메일 확인=====
+router.get('/check-email', async (req, res) => {
+  const { email } = req.query;
+
+  try {
+    // 이메일이 이미 등록되어 있는지 확인
+    const existingEmail = await User.findOne({ email });
+
+    if (existingEmail) {
+      // 이미 등록된 이메일이면 중복
+      return res.status(200).json({ isDuplicate: true });
+    } else {
+      // 등록되어 있지 않으면 중복 아님
+      return res.status(200).json({ isDuplicate: false });
+    }
+  } catch (error) {
+    console.error('이메일 중복 확인 중 오류:', error);
+    res.status(500).json({ error: '서버 오류' });
+  }
+});
+
 module.exports = router;

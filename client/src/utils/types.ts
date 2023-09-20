@@ -60,3 +60,14 @@ export interface PostingType {
   id?: string;
   _id?: string;
 }
+
+export interface UserProfileType {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export interface ApiResponseType {
+  success: boolean;
+  message: string;
+}

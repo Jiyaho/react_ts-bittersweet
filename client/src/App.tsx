@@ -16,6 +16,7 @@ import NoticeDetail from './pages/notice/NoticeDetail';
 import NoticeWrite from './pages/notice/NoticeWrite';
 import NoticeEdit from './pages/notice/NoticeEdit';
 import MyPage from './pages/myPage/MyPage';
+import UpdateProfile from './pages/myPage/UpdateProfile';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/notice-write" element={<NoticeWrite />} />
         <Route path="/notice-edit/:id" element={<NoticeEdit />} />
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="/mypage/update-profile" element={<UpdateProfile />} />
       </Routes>
     </BrowserRouter>
   );
