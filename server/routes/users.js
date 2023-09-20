@@ -74,4 +74,17 @@ router.get('/logout', auth, (req, res) => {
   });
 });
 
+//=====회원 탈퇴=====
+router.delete('/delete-account', auth, async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.user._id);
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: '사용자를 찾을 수 없습니다.' });
+    }
+    return res.status(200).json({ succee: true, message: '회원 탈퇴가 완료되었습니다.' });
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+});
 module.exports = router;
