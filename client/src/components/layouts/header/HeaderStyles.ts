@@ -96,6 +96,15 @@ export const LoginDiv = styled.div`
     border: none;
     background-color: transparent;
     width: 100px;
+    &:hover {
+      color: ${colors.accent};
+    }
+  }
+  a {
+    font-size: 1.1em;
+    &:hover {
+      color: ${colors.accent};
+    }
   }
 
   @media (max-width: 768px) {
@@ -105,9 +114,10 @@ export const LoginDiv = styled.div`
       overflow: none;
     }
     &.on {
-      margin-right: -40px;
+      /* margin-right: -40px;
       margin-top: -214px;
-      width: 110px;
+      width: 110px; */
+      display: none;
     }
   }
 `;
