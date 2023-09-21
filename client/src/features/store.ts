@@ -1,11 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userSlice from './userSlice';
-import postingSlice from './postingSlice';
 
 const store = configureStore({
   reducer: {
     user: userSlice,
-    posting: postingSlice,
   },
 });
 
