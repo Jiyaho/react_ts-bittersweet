@@ -7,15 +7,10 @@ import { setUserAuth } from '../../../features/userSlice';
 
 function HeaderLogin({ className }: { className: string }) {
   const dispatch = useDispatch();
-  const [toggleButton, setToggleButton] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [loginUserName, setLoginUserName] = useState<null | string>(null);
   const setLogout = useLogout();
   const { data: authData } = useAuth(); // 현재의 사용자 인증 데이터
-
-  // const handleToggleButton = () => {
-  //   setToggleButton(!toggleButton);
-  // };
 
   const handleLogout = async () => {
     try {
