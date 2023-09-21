@@ -79,7 +79,15 @@ function UpdateProfile() {
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">이름:</label>
-            <input type="text" id="name" value={name} onChange={handleNameChange} placeholder="이름을 입력하세요" required />
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={handleNameChange}
+              placeholder="이름을 입력하세요"
+              required
+              maxLength={10}
+            />
             <div className="check">최대 10자</div>
           </div>
           <div>
@@ -107,6 +115,7 @@ function UpdateProfile() {
               onChange={handlePasswordChange}
               placeholder="새 비밀번호를 입력하세요"
               required
+              maxLength={10}
             />
             <div className="check">최대 10자</div>
           </div>
