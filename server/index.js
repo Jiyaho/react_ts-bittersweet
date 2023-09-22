@@ -8,12 +8,6 @@ const config = require('./config/key');
 const postings = require('./routes/postings');
 const users = require('./routes/users');
 
-// 'application/json' 형식의 데이터를 parse해 줌
-app.use(express.json());
-
-// URL 형식의 데이터를 parse해 줌
-app.use(express.urlencoded({ extended: true }));
-
 const cors = require('cors'); // CORS Issue를 위한 설정
 const corsOptions = {
   origin: [
@@ -24,6 +18,12 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+
+// 'application/json' 형식의 데이터를 parse해 줌
+app.use(express.json());
+
+// URL 형식의 데이터를 parse해 줌
+app.use(express.urlencoded({ extended: true }));
 
 // const cookieParser = require('cookie-parser');
 // app.use(cookieParser());
