@@ -36,4 +36,14 @@ export const Article = styled.article`
       }
     }
   }
+  @media (max-width: 768px) {
+    width: 90%;
+    gap: 3%;
+
+    div {
+      img {
+        width: 160px;
+      }
+    }
+  }
 `;

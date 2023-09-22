@@ -1,5 +1,6 @@
 import { FaDroplet } from 'react-icons/fa6';
 import * as S from './HomeArticleStyles';
+import { Link } from 'react-router-dom';
 
 function HomeArticle() {
   const baseUrl = process.env.PUBLIC_URL;
@@ -27,12 +28,12 @@ function HomeArticle() {
 
       <S.LastArticle>
         <div>
-          <S.IconDiv>
+          <div className="icon">
             <FaDroplet />
-          </S.IconDiv>
+          </div>
           <p>가까이 있는 Bittersweet 매장을 찾아보세요.</p>
           <button>
-            <S.LinkStyled to={`/store`}>🔍 매장 검색하기</S.LinkStyled>
+            <Link to={'/store'}>🔍 매장 검색하기</Link>
           </button>
         </div>
       </S.LastArticle>

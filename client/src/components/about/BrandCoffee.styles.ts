@@ -21,12 +21,20 @@ export const Article = styled.article`
   ul {
     text-align: center;
     margin: auto;
-    width: 70%;
+    width: 85%;
     margin-top: 40px;
     margin-bottom: 45px;
     list-style: none;
     font-size: 1em;
     padding-left: 0;
+  }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.4em;
+    }
+    h2 {
+      font-size: 0.9em;
+    }
   }
 `;
 
@@ -36,16 +44,19 @@ export const FirstDiv = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-
   img {
     justify-content: center;
     width: 950px;
     margin: 30px 0px 50px 0px;
   }
   @media (max-width: 768px) {
+    margin: 40px;
     img {
-      width: 85%;
+      width: 108%;
       margin-bottom: 20px;
+    }
+    p {
+      font-size: 0.9em;
     }
   }
 `;
@@ -64,7 +75,6 @@ export const Divs = styled.div`
   div {
     width: 450px;
     margin: 45px 0px 20px 0px;
-
     h3 {
       color: ${colors.accent};
       font-size: 1.2em;
@@ -79,6 +89,12 @@ export const Divs = styled.div`
     margin-bottom: -30px;
     img {
       width: 85%;
+    }
+    div {
+      width: 85%;
+      p {
+        font-size: 0.8em;
+      }
     }
   }
 `;

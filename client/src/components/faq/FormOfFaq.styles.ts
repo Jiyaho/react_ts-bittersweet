@@ -11,20 +11,14 @@ export const Button = styled.button`
   padding: 10px 15px;
   border: none;
   outline: none;
-  font-size: 20px;
+  font-size: 1.2em;
   color: ${colors.textLight};
   font-weight: 700;
   cursor: pointer;
 
-  span:nth-child(1) {
-    &.on {
-      color: ${colors.textDark};
-    }
-  }
-
   span:nth-child(2) {
     &.on {
-      color: ${colors.textDark};
+      color: ${colors.accent};
       transform: rotate(180deg);
       transition: all ease 1s;
     }
@@ -32,9 +26,11 @@ export const Button = styled.button`
       transition: transform 0.5s ease-in;
     }
   }
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 export const Div = styled.div`
-  width: inherit;
   opacity: 0;
   line-height: 1.5;
   overflow: hidden;
@@ -53,6 +49,10 @@ export const Div = styled.div`
     margin-bottom: 5px;
     transition: height 0.5s ease;
     height: 40px;
+    @media (max-width: 768px) {
+      font-size: 1em;
+      height: 34px;
+    }
   }
   &.off {
     transition: all 0.5s ease;

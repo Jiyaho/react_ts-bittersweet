@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { faqList } from '../../utils/constants';
+import { faqList } from '../../data/faqList';
 import { FaqType } from '../../utils/types';
 import FormOfFaq from './FormOfFaq';
 import { Section } from './FaqSection.styles';
@@ -24,13 +24,11 @@ function FaqSection() {
   return (
     <Section>
       <input onChange={inputChange} value={inputValue} placeholder="🔍 검색할 내용을 입력해 주세요."></input>
-      <article>
-        {filteredQuestion.map((qna) => (
-          <div key={qna.idx}>
-            <FormOfFaq question={qna.q} answer={qna.a} />
-          </div>
-        ))}
-      </article>
+      {filteredQuestion.map((qna) => (
+        <article key={qna.idx}>
+          <FormOfFaq question={qna.q} answer={qna.a} />
+        </article>
+      ))}
     </Section>
   );
 }

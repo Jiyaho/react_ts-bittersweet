@@ -13,8 +13,8 @@ function Header() {
   };
 
   return (
-    <header>
-      <S.Nav className={toggleButton ? 'on' : 'off'}>
+    <S.Header>
+      <nav className={toggleButton ? 'on' : 'off'}>
         <S.LogoDiv className={toggleButton ? 'on' : 'off'}>
           <div>
             <FaDroplet />
@@ -36,8 +36,8 @@ function Header() {
             <FaBars />
           </S.FaBarsDiv>
         </Link>
-      </S.Nav>
-    </header>
+      </nav>
+    </S.Header>
   );
 }
 export default Header;

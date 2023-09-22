@@ -3,7 +3,7 @@ import { colors } from '../../styles/colors';
 
 export const Section = styled.section`
   width: 100%;
-  margin-top: 150px;
+  margin-top: 130px;
   form {
     width: 270px;
     display: flex;
@@ -47,5 +47,8 @@ export const Section = styled.section`
         outline-color: ${colors.accent};
       }
     }
+  }
+  @media (max-width: 768px) {
+    margin-top: 80px;
   }
 `;

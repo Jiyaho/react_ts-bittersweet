@@ -54,4 +54,7 @@ export const Section = styled.section`
       }
     }
   }
+  @media (max-width: 768px) {
+    width: 85%;
+  }
 `;

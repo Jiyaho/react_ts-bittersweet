@@ -4,7 +4,7 @@ import { colors } from '../../../styles/colors';
 export const Nav = styled.nav`
   margin-left: 7.5%;
   @media (max-width: 768px) {
-    margin-left: 3%;
+    margin-left: 5.5%;
     margin-top: 2%;
   }
   a {

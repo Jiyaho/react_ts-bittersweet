@@ -8,6 +8,7 @@ export const Article = styled.article`
   justify-content: center;
 
   @media (max-width: 768px) {
+    width: 90%;
     flex-direction: column;
     margin: auto;
   }

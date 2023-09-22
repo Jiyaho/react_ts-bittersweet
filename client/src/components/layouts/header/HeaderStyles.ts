@@ -1,30 +1,35 @@
 import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 
-export const Nav = styled.nav`
-  height: 55px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: ${colors.background};
-  opacity: 90%;
-  padding: 5px 20px;
+export const Header = styled.header`
   position: sticky;
   top: 0;
-  a {
-    text-decoration: none;
-    color: ${colors.textDark};
-  }
-  button {
-    cursor: pointer;
-    font-size: 1.2em;
-  }
-  @media (max-width: 768px) {
-    &.off {
-      height: 55px;
+  z-index: 100;
+  nav {
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: ${colors.background};
+    opacity: 80%;
+    padding: 5px 20px;
+    position: sticky;
+    top: 0;
+    a {
+      text-decoration: none;
+      color: ${colors.textDark};
     }
-    &.on {
-      height: 100%;
+    button {
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+    @media (max-width: 768px) {
+      &.off {
+        height: 55px;
+      }
+      &.on {
+        height: 100%;
+      }
     }
   }
 `;
@@ -33,6 +38,7 @@ export const LogoDiv = styled.div`
   color: ${colors.accent};
   display: flex;
   width: 20vh;
+  gap: 2px;
 
   @media (max-width: 768px) {
     width: 73vh;
@@ -44,10 +50,10 @@ export const LogoDiv = styled.div`
     }
   }
   div {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   a {
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-decoration: none;
     font-weight: bold;
     color: ${colors.textDark};
@@ -95,28 +101,35 @@ export const LoginDiv = styled.div`
   button {
     border: none;
     background-color: transparent;
-    width: 100px;
+    font-size: 1.1em;
+    width: 120px;
+    white-space: nowrap; /* 텍스트가 한 줄에 표시되도록 설정 */
+    display: flex;
+    div {
+      max-width: 70px; /* 최대 너비를 조절 (원하는 크기로 조절) */
+      overflow: hidden; /* 넘치는 텍스트를 숨김 */
+      text-overflow: ellipsis; /* 넘치는 텍스트에 '...'을 표시 */
+    }
     &:hover {
       color: ${colors.accent};
     }
   }
   a {
-    font-size: 1.1em;
     &:hover {
       color: ${colors.accent};
     }
   }
 
   @media (max-width: 768px) {
+    button {
+      font-size: 1em;
+      width: 110px;
+    }
     &.off {
-      width: 170px;
-      margin-right: 17.5px;
+      margin-top: -3px;
       overflow: none;
     }
     &.on {
-      /* margin-right: -40px;
-      margin-top: -214px;
-      width: 110px; */
       display: none;
     }
   }
@@ -132,7 +145,7 @@ export const FaBarsDiv = styled.div`
     &.off {
     }
     &.on {
-      margin-top: -122px;
+      margin-top: -111px;
     }
   }
 `;

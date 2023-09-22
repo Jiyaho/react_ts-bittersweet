@@ -6,6 +6,8 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 5px;
+  @media (max-width: 768px) {
+  }
 `;
 export const FirstArticle = styled.article`
   position: sticky;
@@ -40,7 +42,6 @@ export const FirstArticle = styled.article`
     color: ${colors.textLight};
     animation: slide-leftToRight 1s ease-out;
   }
-
   ul {
     font-size: 1.1em;
     position: absolute;
@@ -54,9 +55,40 @@ export const FirstArticle = styled.article`
       padding-bottom: 5px;
     }
   }
-
   img {
     width: 100%;
+  }
+  @media (max-width: 768px) {
+    h1 {
+      top: 30px;
+      left: 50px;
+      font-size: 2em;
+    }
+    ul {
+      font-size: 0.85em;
+      top: 100px;
+      left: 50px;
+    }
+    @keyframes slide-leftToRight {
+      from {
+        left: -100px;
+        opacity: 0;
+      }
+      to {
+        left: 50px;
+        opacity: 1;
+      }
+    }
+    @keyframes slide-leftToRight_m {
+      from {
+        left: -100px;
+        opacity: 0;
+      }
+      to {
+        left: 50px;
+        opacity: 1;
+      }
+    }
   }
 `;
 
@@ -77,6 +109,12 @@ export const SecondArticle = styled.article`
     background: fixed;
     width: 100%;
   }
+  @media (max-width: 768px) {
+    span {
+      font-size: 0.9em;
+      margin: 60px;
+    }
+  }
 `;
 
 export const LastArticle = styled.article`
@@ -87,17 +125,15 @@ export const LastArticle = styled.article`
   align-items: center;
   justify-content: center;
   margin-bottom: 6px;
-
   p {
     font-weight: bold;
     font-size: 1.3em;
     color: ${colors.textLight};
   }
-
-  Link {
+  a {
     text-decoration: none;
+    color: ${colors.textDark};
   }
-
   button {
     width: 130px;
     height: 35px;
@@ -108,17 +144,24 @@ export const LastArticle = styled.article`
     border: none;
     border-radius: 5px;
   }
-`;
-
-export const IconDiv = styled.div`
-  margin-bottom: -10px;
-  color: ${colors.accent};
-  font-size: 3.2em;
-  text-align: center;
-`;
-
-export const LinkStyled = styled(Link)`
-  text-decoration: none;
-  color: ${colors.accent};
-  font-weight: bold;
+  .icon {
+    margin-bottom: -10px;
+    color: ${colors.accent};
+    font-size: 3.3em;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    height: 220px;
+    background-image: linear-gradient(to bottom, orange 50%, white);
+    margin-bottom: -200px;
+    .icon {
+      font-size: 2.3em;
+    }
+    p {
+      font-size: 1em;
+    }
+    button {
+      height: 30px;
+    }
+  }
 `;

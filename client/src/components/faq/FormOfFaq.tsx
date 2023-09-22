@@ -16,7 +16,7 @@ function FormOfFaq({ question, answer }: FormOfFaq) {
   return (
     <>
       <S.Button onClick={handleToggle}>
-        <span className={toggle ? 'on' : 'off'}>Q.{question}</span>
+        <span>Q.{question}</span>
         <span className={toggle ? 'on' : 'off'}>
           <BiSolidDownArrow />
         </span>

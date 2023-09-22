@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth, useCheckSameEmail, useUpdateProfile } from '../../Api/UsersApi';
 import { UserProfileType } from '../../utils/types';
 import { Section } from './UpdateProfile.styles';
+import { Link } from 'react-router-dom';
 
 function UpdateProfile() {
   const navigate = useNavigate();
@@ -137,7 +138,12 @@ function UpdateProfile() {
               <div className="check unmatch">❌ 비밀번호 불일치</div>
             )}
           </div>
-          <button type="submit">저장</button>
+          <div className="buttons_wrap">
+            <button>
+              <Link to="/mypage">취소</Link>
+            </button>
+            <button type="submit">저장</button>
+          </div>
         </form>
       </Section>
     </Layout>

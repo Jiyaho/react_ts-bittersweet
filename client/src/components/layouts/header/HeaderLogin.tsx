@@ -48,7 +48,13 @@ function HeaderLogin({ className }: { className: string }) {
 
   return (
     <LoginDiv className={className}>
-      {isLogin ? <button onClick={handleLogout}>{loginUserName} 님 🔐</button> : <Link to={'/login'}>LOGIN</Link>}
+      {isLogin ? (
+        <button onClick={handleLogout}>
+          <div>{loginUserName}</div>님🔐
+        </button>
+      ) : (
+        <Link to={'/login'}>LOGIN</Link>
+      )}
     </LoginDiv>
   );
 }

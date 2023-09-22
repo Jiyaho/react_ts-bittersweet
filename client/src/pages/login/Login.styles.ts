@@ -48,4 +48,7 @@ export const Section = styled.section`
       }
     }
   }
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
 `;

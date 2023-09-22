@@ -19,7 +19,7 @@ export const Article = styled.article`
   ul {
     text-align: center;
     margin: auto;
-    width: 70%;
+    width: 85%;
     margin-top: 40px;
     margin-bottom: 45px;
     list-style: none;
@@ -36,6 +36,12 @@ export const Article = styled.article`
     margin-bottom: 100px;
   }
   @media (max-width: 768px) {
+    h1 {
+      font-size: 1.4em;
+    }
+    h2 {
+      font-size: 0.9em;
+    }
     img {
       width: 85%;
     }

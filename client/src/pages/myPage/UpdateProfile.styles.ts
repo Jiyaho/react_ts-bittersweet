@@ -7,11 +7,8 @@ export const Section = styled.section`
   align-items: center; /* 수직 가운데 정렬 */
   form {
     width: 40%;
-    /* max-width: 400px; */
     margin: auto;
-
     div {
-      /* background-color: pink; */
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -31,7 +28,6 @@ export const Section = styled.section`
       }
     }
   }
-
   .check {
     width: 32%;
   }
@@ -40,5 +36,46 @@ export const Section = styled.section`
   }
   .unmatch {
     color: red;
+  }
+  .buttons_wrap {
+    display: flex;
+    justify-content: center;
+    button {
+      width: 30%;
+      height: 40px;
+      cursor: pointer;
+      font-size: 1em;
+      a {
+        text-decoration: none;
+        color: ${colors.textDark};
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    form {
+      width: 90%;
+      div {
+        gap: 8px;
+        margin-bottom: 10px;
+        label {
+          font-size: 0.9em;
+          width: 26%;
+        }
+        input {
+          width: 49%;
+          height: min-content;
+          border: none;
+          border-bottom: 1px solid black;
+          font-size: 1.1em;
+          &::placeholder {
+            font-size: 0.8em;
+          }
+        }
+      }
+      .check {
+        width: 23%;
+        font-size: 0.8em;
+      }
+    }
   }
 `;

@@ -9,7 +9,7 @@ export const Input = styled.input`
   border-bottom: 2px solid ${colors.textMd};
   font-size: 1.3em;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: -13px;
   &:focus {
     outline: none;
   }

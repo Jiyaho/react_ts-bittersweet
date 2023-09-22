@@ -10,11 +10,9 @@ export const Article = styled.article`
       opacity: 1;
     }
   }
-
   margin-top: 20px;
   top: 150px;
   animation: easeOut 2s ease-out;
-
   h1 {
     font-size: 2em;
     text-align: center;
@@ -36,6 +34,12 @@ export const Article = styled.article`
     margin-bottom: 100px;
   }
   @media (max-width: 768px) {
+    h1 {
+      font-size: 1.4em;
+    }
+    h2 {
+      font-size: 0.9em;
+    }
     img {
       width: 95%;
     }
