@@ -3,26 +3,29 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { postingsUrl } from '../utils/constants';
 import { useNavigate } from 'react-router-dom';
 
+// 모든 게시글 가져오기
 export function useFetchAllPostings() {
   const queryKey = ['postings'];
   return useQuery(queryKey, async () => {
-    const response = await axios.get(postingsUrl);
+    const response = await axios.get(postingsUrl, { withCredentials: true });
     return response.data.reverse();
   });
 }
 
+// 특정 게시글 가져오기(Notice-detail page)
 export function useFetchPosting(postId: string | undefined) {
   const queryKeys = ['posting', postId];
   return useQuery(queryKeys, async () => {
-    const response = await axios.get(`${postingsUrl}/${postId}`);
+    const response = await axios.get(`${postingsUrl}/${postId}`, { withCredentials: true });
     return response.data;
   });
 }
 
+// 게시글 삭제하기
 export function useDeletePosting() {
   const navigate = useNavigate();
   const deletePosting = async (postId: string | undefined) => {
-    const response = await axios.delete(`${postingsUrl}/${postId}`);
+    const response = await axios.delete(`${postingsUrl}/${postId}`, { withCredentials: true });
     return response.data;
   };
 

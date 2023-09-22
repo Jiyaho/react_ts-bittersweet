@@ -80,7 +80,7 @@ export function useCheckSameEmail() {
   return useMutation(
     async (email) => {
       // 중복 확인 API 엔드포인트로 요청을 전송
-      const response = await axios.get(`${usersUrl}/check-email?email=${email}`);
+      const response = await axios.get(`${usersUrl}/check-email?email=${email}`, { withCredentials: true });
       return response.data;
     },
     {
