@@ -53,5 +53,5 @@
     "@tanstack/react-query-devtools": "^4.33.0",
     "@types/styled-components": "^5.1.26"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://bittersweet-2370140ae48e.herokuapp.com"
 }
