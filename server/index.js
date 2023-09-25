@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors'); // CORS Issue를 위한 설정
-const PORT = process.env.PORT || 5000;
 const config = require('./config/key');
 const postings = require('./routes/postings');
 const users = require('./routes/users');
@@ -8,7 +7,7 @@ const users = require('./routes/users');
 const corsOptions = {
   origin: [
     // 클라이언트(프론트) URL 추가
-    // 'http://localhost:3000',
+    'http://localhost:3000',
     'https://bittersweet-korea.vercel.app',
   ],
   credentials: true,
@@ -17,14 +16,16 @@ const corsOptions = {
 const app = express();
 app.use(cors(corsOptions));
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Credentials', 'true'); // 이 부분을 추가합니다.
+  next();
+});
+
 // 'application/json' 형식의 데이터를 parse해 줌
 app.use(express.json());
 
 // URL 형식의 데이터를 parse해 줌
 app.use(express.urlencoded({ extended: true }));
-
-// const cookieParser = require('cookie-parser');
-// app.use(cookieParser());
 
 // 서버 정상 연결 체크
 app.get('/', (req, res) => res.send('Server check!'));
@@ -42,6 +43,6 @@ mongoose
   .then(() => console.log('MongoDB Connected...'))
   .catch((err) => console.error(err));
 
-app.listen(PORT, () => {
-  console.log('http 서버 실행 성공 포트 :: ' + PORT);
+app.listen(config.PORT, config.IP, () => {
+  console.log('Server is running on port :: ' + config.PORT);
 });

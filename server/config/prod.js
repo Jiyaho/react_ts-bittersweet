@@ -1,5 +1,7 @@
 module.exports = {
   mongoURI: process.env.MONGO_URI,
+  PORT: 3000,
+  IP: process.env.IP,
 };
 
 // MONGO_URI는 heroku 같은 서비스를 이용할 경우,
