@@ -1,7 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../models/User');
 const { auth } = require('../middleware/auth');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
+
+router.all('*', cors());
 router.use(cookieParser());
 
 //=====Register(Sign-up) Route=====
