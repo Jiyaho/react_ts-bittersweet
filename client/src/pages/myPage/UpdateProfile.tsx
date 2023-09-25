@@ -6,14 +6,18 @@ import { useAuth, useCheckSameEmail, useUpdateProfile } from '../../Api/UsersApi
 import { UserProfileType } from '../../utils/types';
 import { Section } from './UpdateProfile.styles';
 import { Link } from 'react-router-dom';
+import { RootState } from '../../features/store';
+import { useSelector } from 'react-redux';
 
 function UpdateProfile() {
   const navigate = useNavigate();
+  const userName = useSelector((state: RootState) => state.user.name);
   const updateProfile = useUpdateProfile();
   const { data: authUser } = useAuth();
   const { mutateAsync: checkSameEmail } = useCheckSameEmail();
   const [email, setEmail] = useState(authUser ? authUser.email : '');
-  const [name, setName] = useState(authUser ? authUser.name : '');
+  // const [name, setName] = useState(authUser ? authUser.name : '');
+  const [name, setName] = useState(userName ? userName : '');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [emailCheckResult, setEmailCheckResult] = useState('');
