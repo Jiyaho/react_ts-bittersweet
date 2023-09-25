@@ -8,7 +8,7 @@ const users = require('./routes/users');
 const corsOptions = {
   origin: [
     // 클라이언트(프론트) URL 추가
-    'http://localhost:3000',
+    // 'http://localhost:3000',
     'https://bittersweet-korea.vercel.app',
   ],
   credentials: true,
