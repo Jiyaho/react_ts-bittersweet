@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+    "start": "node index.js",
+    "backend": "nodemon index.js",
+    "dev": "concurrently \"npm run backend\" \"cd ../client && npm run start\""
   },
   "repository": {
     "type": "git",
@@ -30,10 +30,7 @@
     "mongoose-sequence": "^5.3.1"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.10",
     "nodemon": "^3.0.1"
-  },
-  "engines": {
-    "node": "18.16.0",
-    "npm": "9.5.1"
   }
 }
