@@ -33,11 +33,13 @@ function Login() {
       };
       const response = await axios.post(`${usersUrl}/login`, body, { withCredentials: true });
       if (response.data.loginSuccess) {
+        console.log(response.data);
         dispatch(
           setUserAuth({
             isAuth: true,
             name: response.data.userName,
             isAdmin: response.data.role === 0 ? false : true,
+            email: response.data.email,
           })
         );
         navigate('/');

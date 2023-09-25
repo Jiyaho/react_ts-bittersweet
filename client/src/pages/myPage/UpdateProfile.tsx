@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Title from '../../components/atoms/Title';
 import Layout from '../../components/layouts/Layout';
 import { useNavigate } from 'react-router-dom';
@@ -11,11 +11,14 @@ import { useSelector } from 'react-redux';
 
 function UpdateProfile() {
   const navigate = useNavigate();
+  const isAuth = useSelector((state: RootState) => state.user.isAuth);
   const userName = useSelector((state: RootState) => state.user.name);
+  const userEmail = useSelector((state: RootState) => state.user.email);
   const updateProfile = useUpdateProfile();
   const { data: authUser } = useAuth();
   const { mutateAsync: checkSameEmail } = useCheckSameEmail();
-  const [email, setEmail] = useState(authUser ? authUser.email : '');
+  // const [email, setEmail] = useState(authUser ? authUser.email : '');
+  const [email, setEmail] = useState(userEmail ? userEmail : '');
   // const [name, setName] = useState(authUser ? authUser.name : '');
   const [name, setName] = useState(userName ? userName : '');
   const [password, setPassword] = useState('');
@@ -76,6 +79,11 @@ function UpdateProfile() {
       alert('회원 정보 수정 중 오류가 발생했습니다.');
     }
   };
+
+  useEffect(() => {
+    // 인증된 사용자(로그인한 유저)는 로그인 페이지 접속 시 홈으로 리다이렉트
+    if (!isAuth) navigate('/login');
+  }, [isAuth]);
 
   return (
     <Layout>

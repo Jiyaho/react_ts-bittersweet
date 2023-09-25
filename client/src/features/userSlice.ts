@@ -6,6 +6,7 @@ const initialState = {
   isAuth: false,
   name: null,
   isAdmin: false,
+  email: null,
 };
 
 export const userSlice = createSlice({
@@ -16,6 +17,7 @@ export const userSlice = createSlice({
       state.isAuth = action.payload.isAuth;
       state.name = action.payload.name;
       state.isAdmin = action.payload.isAdmin;
+      state.email = action.payload.email;
     },
   },
 });
