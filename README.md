@@ -2,7 +2,7 @@
 
 ## 🔷 URL
 
-- Web Site:
+- Web Site: https://bittersweet-korea.vercel.app
 - Github Repository: https://github.com/Jiyaho/react_ts-bittersweet
 
 ## 🔷 Description
