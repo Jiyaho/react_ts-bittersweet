@@ -33,7 +33,6 @@ function Login() {
       };
       const response = await axios.post(`${usersUrl}/login`, body, { withCredentials: true });
       if (response.data.loginSuccess) {
-        console.log(response.data);
         dispatch(
           setUserAuth({
             isAuth: true,

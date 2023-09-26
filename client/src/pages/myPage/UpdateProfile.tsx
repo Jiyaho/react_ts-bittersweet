@@ -12,15 +12,11 @@ import { useSelector } from 'react-redux';
 function UpdateProfile() {
   const navigate = useNavigate();
   const isAuth = useSelector((state: RootState) => state.user.isAuth);
-  const userName = useSelector((state: RootState) => state.user.name);
-  const userEmail = useSelector((state: RootState) => state.user.email);
   const updateProfile = useUpdateProfile();
   const { data: authUser } = useAuth();
   const { mutateAsync: checkSameEmail } = useCheckSameEmail();
-  // const [email, setEmail] = useState(authUser ? authUser.email : '');
-  const [email, setEmail] = useState(userEmail ? userEmail : '');
-  // const [name, setName] = useState(authUser ? authUser.name : '');
-  const [name, setName] = useState(userName ? userName : '');
+  const [email, setEmail] = useState(authUser ? authUser.email : '');
+  const [name, setName] = useState(authUser ? authUser.name : '');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [emailCheckResult, setEmailCheckResult] = useState('');

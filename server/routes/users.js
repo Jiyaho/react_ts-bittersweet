@@ -39,7 +39,10 @@ router.post('/login', (req, res) => {
         if (err) return res.status(400).send(err); //status(400): 에러있는 경우
         //cookieParser를 이용하여 토큰을 쿠키에 저장
         res
-          .cookie('x_auth', user.token) //cookie에 토큰을 "x_auth"라는 이름으로 넣음
+          .cookie('x_auth', user.token, {
+            sameSite: 'none',
+            secure: true,
+          }) //cookie에 토큰을 "x_auth"라는 이름으로 넣음
           .status(200) //성공한 경우
           .json({ loginSuccess: true, userId: user._id, userName: user.name, role: user.role, email: user.email });
       });
