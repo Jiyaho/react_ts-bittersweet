@@ -68,3 +68,143 @@
 10. My Page 추가: 회원 정보 수정 및 회원 탈퇴 기능 추가
 
 ## 🔷 File Tree Structure
+
+```
+📦 react_ts-bittersweet
+├─ .gitignore
+├─ README.md
+├─ client
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  ├─ src
+│  │  ├─ Api
+│  │  │  ├─ PostingsApi.tsx
+│  │  │  └─ UsersApi.tsx
+│  │  ├─ App.test.tsx
+│  │  ├─ App.tsx
+│  │  ├─ components
+│  │  │  ├─ about
+│  │  │  │  ├─ AboutNav.styles.ts
+│  │  │  │  ├─ AboutNav.tsx
+│  │  │  │  ├─ BrandCoffee.styles.ts
+│  │  │  │  ├─ BrandCoffee.tsx
+│  │  │  │  ├─ BrandHistory.styles.ts
+│  │  │  │  ├─ BrandHistory.tsx
+│  │  │  │  ├─ BrandPrinciples.styles.ts
+│  │  │  │  └─ BrandPrinciples.tsx
+│  │  │  ├─ atoms
+│  │  │  │  ├─ ScrollButton.tsx
+│  │  │  │  └─ Title.tsx
+│  │  │  ├─ faq
+│  │  │  │  ├─ FaqSection.styles.ts
+│  │  │  │  ├─ FaqSection.tsx
+│  │  │  │  ├─ FormOfFaq.styles.ts
+│  │  │  │  └─ FormOfFaq.tsx
+│  │  │  ├─ findStore
+│  │  │  │  └─ KakaoMap.tsx
+│  │  │  ├─ home
+│  │  │  │  ├─ HomeArticle.tsx
+│  │  │  │  └─ HomeArticleStyles.ts
+│  │  │  ├─ layouts
+│  │  │  │  ├─ Layout.tsx
+│  │  │  │  ├─ LayoutStyles.ts
+│  │  │  │  ├─ footer
+│  │  │  │  │  ├─ Footer.tsx
+│  │  │  │  │  └─ FooterStyles.ts
+│  │  │  │  └─ header
+│  │  │  │     ├─ Header.tsx
+│  │  │  │     ├─ HeaderLogin.tsx
+│  │  │  │     └─ HeaderStyles.ts
+│  │  │  ├─ menu
+│  │  │  │  ├─ FormOfMenu.tsx
+│  │  │  │  ├─ MenuCategorization.tsx
+│  │  │  │  ├─ MenuNav.styles.ts
+│  │  │  │  ├─ MenuNav.tsx
+│  │  │  │  └─ menuDetail
+│  │  │  │     ├─ FormOfMenuDetail.styles.ts
+│  │  │  │     ├─ FormOfMenuDetail.tsx
+│  │  │  │     ├─ MenuDetailNav.styles.ts
+│  │  │  │     └─ MenuDetailNav.tsx
+│  │  │  ├─ mypage
+│  │  │  │  └─ Withdrawal.tsx
+│  │  │  └─ notice
+│  │  │     ├─ NoticeTable.styles.ts
+│  │  │     └─ NoticeTable.tsx
+│  │  ├─ data
+│  │  │  ├─ faqList.ts
+│  │  │  └─ menuData.json
+│  │  ├─ features
+│  │  │  ├─ store.ts
+│  │  │  └─ userSlice.ts
+│  │  ├─ index.tsx
+│  │  ├─ logo.svg
+│  │  ├─ pages
+│  │  │  ├─ about
+│  │  │  │  └─ AboutUs.tsx
+│  │  │  ├─ faq
+│  │  │  │  └─ Faq.tsx
+│  │  │  ├─ findStore
+│  │  │  │  ├─ FindStore.styles.ts
+│  │  │  │  └─ FindStore.tsx
+│  │  │  ├─ home
+│  │  │  │  └─ Home.tsx
+│  │  │  ├─ login
+│  │  │  │  ├─ Login.styles.ts
+│  │  │  │  └─ Login.tsx
+│  │  │  ├─ menu
+│  │  │  │  ├─ Menu.styles.ts
+│  │  │  │  ├─ Menu.tsx
+│  │  │  │  ├─ MenuBeverage.tsx
+│  │  │  │  ├─ MenuCoffee.tsx
+│  │  │  │  ├─ MenuTea.tsx
+│  │  │  │  └─ menuDetail
+│  │  │  │     ├─ MenuDetail.styles.ts
+│  │  │  │     └─ MenuDetail.tsx
+│  │  │  ├─ myPage
+│  │  │  │  ├─ MyPage.tsx
+│  │  │  │  ├─ Mypage.styles.ts
+│  │  │  │  ├─ UpdateProfile.styles.ts
+│  │  │  │  └─ UpdateProfile.tsx
+│  │  │  ├─ notice
+│  │  │  │  ├─ Notice.styles.ts
+│  │  │  │  ├─ Notice.tsx
+│  │  │  │  ├─ NoticeDetail.styles.ts
+│  │  │  │  ├─ NoticeDetail.tsx
+│  │  │  │  ├─ NoticeEdit.tsx
+│  │  │  │  ├─ NoticeWrite.styles.ts
+│  │  │  │  └─ NoticeWrite.tsx
+│  │  │  └─ register
+│  │  │     ├─ Register.styles.ts
+│  │  │     └─ Register.tsx
+│  │  ├─ react-app-env.d.ts
+│  │  ├─ reportWebVitals.ts
+│  │  ├─ setupProxy.js
+│  │  ├─ setupTests.ts
+│  │  ├─ styles
+│  │  │  ├─ GlobalStyles.ts
+│  │  │  ├─ colors.ts
+│  │  │  └─ index.css
+│  │  └─ utils
+│  │     ├─ constants.ts
+│  │     └─ types.ts
+│  └─ tsconfig.json
+└─ server
+   ├─ .dockerignore
+   ├─ Dockerfile
+   ├─ config
+   │  ├─ key.js
+   │  └─ prod.js
+   ├─ fly.toml
+   ├─ index.js
+   ├─ middleware
+   │  └─ auth.js
+   ├─ models
+   │  ├─ Posting.js
+   │  └─ User.js
+   ├─ package-lock.json
+   ├─ package.json
+   └─ routes
+      ├─ postings.js
+      └─ users.js
+```
