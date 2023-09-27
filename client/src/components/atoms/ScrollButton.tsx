@@ -39,8 +39,8 @@ const Button = styled.button`
   font-size: 2em;
   border: none;
   color: ${colors.textDark};
-  background-color: ${colors.textLight};
-  padding: 5px 5px 0px 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 0px 0px 0px;
   border-radius: 10px;
   margin-left: 91%;
   margin-top: 500px;
