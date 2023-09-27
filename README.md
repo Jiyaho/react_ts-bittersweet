@@ -38,7 +38,6 @@
 <img src="https://i.ibb.co/gjWdhvF/09-notice-write.png" alt="09-notice-write" border="0 /">
 <img src="https://i.ibb.co/MhvDfhw/10-login.png" alt="10-login" border="0" />
 <img src="https://i.ibb.co/vJ8ssHM/11-register.png" alt="11-register" border="0" />
-<img src="https://i.ibb.co/PGyY9Jm/12-mypage.png" alt="12-mypage" border="0" />
 <img src="https://i.ibb.co/YN9DhFM/13-mypage-update.png" alt="13-mypage-update" border="0" />
 
 ## 🔷 Video Link
