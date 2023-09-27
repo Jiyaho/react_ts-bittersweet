@@ -127,6 +127,7 @@ export const LoginDiv = styled.div`
     }
     &.off {
       margin-top: -3px;
+      margin-right: 10px;
       overflow: none;
     }
     &.on {
@@ -136,16 +137,18 @@ export const LoginDiv = styled.div`
 `;
 
 export const FaBarsDiv = styled.div`
-  color: ${colors.accent};
-  font-size: 24px;
-  margin-right: 5px;
-  display: none;
-  @media (max-width: 768px) {
-    display: block;
-    &.off {
-    }
-    &.on {
-      margin-top: -111px;
+  button {
+    border: none;
+    background-color: transparent;
+    color: ${colors.accent};
+    margin-right: 5px;
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+      &.off {
+      }
+      &.on {
+      }
     }
   }
 `;

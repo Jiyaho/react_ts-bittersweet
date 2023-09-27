@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { FaDroplet, FaBars } from 'react-icons/fa6';
+import { AiOutlineClose } from 'react-icons/ai';
 import * as S from './HeaderStyles';
 import { pages } from '../../../utils/constants';
 import HeaderLogin from './HeaderLogin';
@@ -31,11 +32,23 @@ function Header() {
 
         <HeaderLogin className={toggleButton ? 'on' : 'off'} />
 
-        <Link to={'#'} onClick={handleToggleButton}>
+        {/* <Link to="" onClick={handleToggleButton}>
           <S.FaBarsDiv className={toggleButton ? 'on' : 'off'}>
             <FaBars />
           </S.FaBarsDiv>
-        </Link>
+        </Link> */}
+
+        <S.FaBarsDiv>
+          {toggleButton ? (
+            <button className="on" onClick={handleToggleButton}>
+              <AiOutlineClose />
+            </button>
+          ) : (
+            <button className="off" onClick={handleToggleButton}>
+              <FaBars />
+            </button>
+          )}
+        </S.FaBarsDiv>
       </nav>
     </S.Header>
   );
