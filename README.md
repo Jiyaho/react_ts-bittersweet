@@ -7,11 +7,11 @@
 
 ## 🔷 Description
 
-- ‘Bittersweet Korea’라는 임의의 커피 브랜드를 만들어 해당 브랜드 관련 내용을 소개 및 안내하는 웹 페이지를 구현한다.
+- ‘Bittersweet Korea’라는 임의의 커피 브랜드를 만들어 해당 브랜드 관련 내용을 소개 및 안내하는 웹 페이지를 구현하였습니다.
 
-- 웹 페이지에는 신 메뉴를 홍보하는 메인 페이지를 비롯하여 브랜드 소개, 판매하는 제품 메뉴 안내, 자주 묻는 질문 정리, 공지사항 안내 게시판 및 해당 브랜드의 오프라인 매장 위치 찾기를 위한 지도 API 등을 포함한다.
+- 웹 페이지에는 신 메뉴를 홍보하는 메인 페이지를 비롯하여 브랜드 소개, 판매하는 제품 메뉴 안내, 자주 묻는 질문 정리, 공지사항 안내 게시판 및 해당 브랜드의 오프라인 매장 위치 찾기를 위한 지도 API 등을 포함합니다.
 
-- 클라이언트는 CRA(Create React App)를 통해, 서버는 Node.js로 환경을 구축하기 위해 Express 프레임워크를 사용하였다. 로그인 및 게시판 CRUD 기능의 구현을 위해 Database는 MongoDB와 Mongoose를 사용하였다.
+- 클라이언트는 CRA(Create React App)를 통해, 서버는 Node.js로 환경을 구축하기 위해 Express 프레임워크를 사용하였다. 로그인 및 게시판 CRUD 기능의 구현을 위해 Database는 MongoDB와 Mongoose를 사용하였습니다.
 
 ## 🔷 사용 스택 및 스킬
 
@@ -27,15 +27,25 @@
 
 ## 🔷 Screenshot
 
-<img src="https://i.ibb.co/C54GSdp/bittersweet-thumbnail.png" alt="bittersweet-thumbnail" />
-<img src="https://i.ibb.co/986cpNc/bittersweet10.png" alt="bittersweet10" />
-<img src="https://i.ibb.co/nfVF8z8/bittersweet13.png" alt="bittersweet13" />
-<img src="https://i.ibb.co/R6ds1cN/bittersweet15.png" alt="bittersweet15" />
-<img src="https://i.ibb.co/xJpn9SW/bittersweet20.png" alt="bittersweet20" />
+<img src="https://i.ibb.co/vss551w/01-home.png" alt="01-home" border="0" />
+<img src="https://i.ibb.co/qJrX3RM/02-about.png" alt="02-about" border="0" />
+<img src="https://i.ibb.co/fQdjxCm/03-menu.png" alt="03-menu" border="0" />
+<img src="https://i.ibb.co/Zh3t7H6/04-menu-detail.png" alt="04-menu-detail" border="0" />
+<img src="https://i.ibb.co/Lp0wspj/05-find-a-store.png" alt="05-find-a-store" border="0" />
+<img src="https://i.ibb.co/L9jTyMW/06-faq.png" alt="06-faq" border="0" />
+<img src="https://i.ibb.co/4TRq3dK/07-notice.png" alt="07-notice" border="0" />
+<img src="https://i.ibb.co/1nF4JXq/08-notice-detail.png" alt="08-notice-detail" border="0" />
+<img src="https://i.ibb.co/gjWdhvF/09-notice-write.png" alt="09-notice-write" border="0 /">
+<img src="https://i.ibb.co/MhvDfhw/10-login.png" alt="10-login" border="0" />
+<img src="https://i.ibb.co/vJ8ssHM/11-register.png" alt="11-register" border="0" />
+<img src="https://i.ibb.co/PGyY9Jm/12-mypage.png" alt="12-mypage" border="0" />
+<img src="https://i.ibb.co/YN9DhFM/13-mypage-update.png" alt="13-mypage-update" border="0" />
 
 ## 🔷 Video Link
 
-[![video](https://img.youtube.com/vi/aBwga7D4Bac/0.jpg)](https://www.youtube.com/watch?v=aBwga7D4Bac&t=24s)
+- PC 구동 화면 동영상: https://www.youtube.com/watch?v=B3EoPTIUNEw
+
+- Mobile 구동 화면 동영상: https://www.youtube.com/watch?v=_YukDvSstx0
 
 ## 🔷 Update
 
