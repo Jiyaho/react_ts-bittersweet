@@ -42,6 +42,8 @@ function Login() {
           })
         );
         navigate('/');
+      } else {
+        alert(response.data.message);
       }
     } catch (error) {
       console.log(error);
