@@ -61,66 +61,65 @@
 
 새로운 메뉴, 이벤트 배너 등으로 이루어진 메인 페이지입니다.
 
-<img src="https://i.ibb.co/vss551w/01-home.png" alt="01-home" width="500px" border="0" loading="lazy" />
-<img src="https://i.ibb.co/ftnBnYz/Bittersweet1.png" alt="01-home" width="500px" border="0" loading="lazy" />
+<img src="https://i.ibb.co/p3DDQxT/01-home.png" alt="01_home" width="600px" border="0" loading="lazy" />
+
 ### About Us Page
 
 기업(브랜드)를 소개하는 정적 페이지입니다.
 
-<img src="https://i.ibb.co/qJrX3RM/02-about.png" alt="02-about" border="0" loading="lazy" />
-<img src="https://i.ibb.co/V0GZGFQ/bittersweet4.png" alt="02-about" width="500px" border="0" loading="lazy">
+<img src="https://i.ibb.co/LdRBcVX/02-about.png" alt="02-about" width="600px" border="0" loading="lazy" />
 
 ### Menu Page
 
 커피&음료 메뉴들을 볼 수 있는 페이지입니다.
 
-<img src="https://i.ibb.co/fQdjxCm/03-menu.png" alt="03-menu" width="500px" border="0" loading="lazy" />
+<img src="https://i.ibb.co/fQdjxCm/03-menu.png" alt="03-menu" width="600px" border="0" loading="lazy" />
 
 ### Menu Detail Page
 
 특정 메뉴에 대한 정보를 볼 수 있는 상세 페이지입니다.
 
-<img src="https://i.ibb.co/Zh3t7H6/04-menu-detail.png" alt="04-menu-detail" border="0" loading="lazy" />
+<img src="https://i.ibb.co/Zh3t7H6/04-menu-detail.png" alt="04-menu-detail" width="600px" border="0" loading="lazy" />
 
 ### Find A Store Page
 
 Kakao Map API를 이용하여 지도를 넣었고, 특정 매장을 검색하여 찾기위한 가상의 페이지입니다.
 
-<img src="https://i.ibb.co/Lp0wspj/05-find-a-store.png" alt="05-find-a-store" border="0" loading="lazy" />
+<img src="https://i.ibb.co/Lp0wspj/05-find-a-store.png" alt="05-find-a-store" width="600px" border="0" loading="lazy" />
 
 ### FAQ Page
 
 자주하는 질문에 대한 페이지입니다. 질문 검색 기능을 제공합니다.
 
-<img src="https://i.ibb.co/L9jTyMW/06-faq.png" alt="06-faq" border="0" loading="lazy" />
+<img src="https://i.ibb.co/L9jTyMW/06-faq.png" alt="06-faq" width="600px" border="0" loading="lazy" />
 
 ### Notice Page (Notice, Notice Detail, Notice Write)
 
 - 공지사항 게시판입니다. 읽기는 모든 사용자 가능, 글 쓰기 권한은 로그인한 사용자입니다.
 - 서버와 통신, CRUD 기능을 구현하였습니다.
 
-<img src="https://i.ibb.co/4TRq3dK/07-notice.png" alt="07-notice" border="0" loading="lazy" />
-<img src="https://i.ibb.co/1nF4JXq/08-notice-detail.png" alt="08-notice-detail" border="0" loading="lazy" />
-<img src="https://i.ibb.co/gjWdhvF/09-notice-write.png" alt="09-notice-write" border="0" loading="lazy" />
+<img src="https://i.ibb.co/4TRq3dK/07-notice.png" alt="07-notice" width="600px" border="0" loading="lazy" />
+<img src="https://i.ibb.co/1nF4JXq/08-notice-detail.png" alt="08-notice-detail" width="600px" border="0" loading="lazy" />
+<img src="https://i.ibb.co/gjWdhvF/09-notice-write.png" alt="09-notice-write" width="600px" border="0" loading="lazy" />
 
 ### My Page
 
 - 회원 정보 수정 및 회원 탈퇴가 가능한 페이지입니다.
 - 로그인한 사용자만 접속 권한이 주어집니다.
 
-<img src="https://i.ibb.co/YN9DhFM/13-mypage-update.png" alt="13-mypage-update" border="0" loading="lazy" />
+<img src="https://i.ibb.co/YN9DhFM/13-mypage-update.png" alt="13-mypage-update" width="600px" border="0" loading="lazy" />
 
 ### Login Page
 
 로그인 페이지입니다.
 
-<img src="https://i.ibb.co/MhvDfhw/10-login.png" alt="10-login" border="0" loading="lazy" />
+<img src="https://i.ibb.co/MhvDfhw/10-login.png" alt="10-login" width="600px" border="0" loading="lazy" />
 
 ### Register Page
 
 회원 가입 페이지 입니다.
 
-<img src="https://i.ibb.co/vJ8ssHM/11-register.png" alt="11-register" border="0" loading="lazy" />
+<img src="https://i.ibb.co/vJ8ssHM/11-register.png" alt="11-register" width="600px" border="0" loading="lazy" />
 
 ## 🔷 Additional Function
 
