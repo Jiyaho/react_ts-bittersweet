@@ -61,7 +61,7 @@
 
 새로운 메뉴, 이벤트 배너 등으로 이루어진 메인 페이지입니다.
 
-<img src="https://i.ibb.co/Xbx9CJP/01-home.png" alt="01_home" loading="lazy" width="600px" border="0" />
+<img src="https://i.ibb.co/Xbx9CJP/01-home.png" alt="01_home" loading="lazy" width="650px" border="0" />
 
 ### About Us Page
 
