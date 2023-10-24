@@ -62,12 +62,13 @@
 새로운 메뉴, 이벤트 배너 등으로 이루어진 메인 페이지입니다.
 
 <img src="https://i.ibb.co/vss551w/01-home.png" alt="01-home" width="500px" border="0" loading="lazy" />
-
+<img src="https://i.ibb.co/ftnBnYz/Bittersweet1.png" alt="01-home" width="500px" border="0" loading="lazy" />
 ### About Us Page
 
 기업(브랜드)를 소개하는 정적 페이지입니다.
 
 <img src="https://i.ibb.co/qJrX3RM/02-about.png" alt="02-about" border="0" loading="lazy" />
+<img src="https://i.ibb.co/V0GZGFQ/bittersweet4.png" alt="02-about" width="500px" border="0" loading="lazy">
 
 ### Menu Page
 
