@@ -98,9 +98,9 @@ Kakao Map API를 이용하여 지도를 넣었고, 특정 매장을 검색하여
 - 공지사항 게시판입니다. 읽기는 모든 사용자 가능, 글 쓰기 권한은 로그인한 사용자입니다.
 - 서버와 통신, CRUD 기능을 구현하였습니다.
 
-<img src="https://i.ibb.co/rZR952k/07-notice.png" alt="07_notice" loading="lazy" width="650px" />
-<img src="https://i.ibb.co/KNHnYk7/08-notice-detail.png" alt="08_notice-detail" loading="lazy" width="650px" />
-<img src="https://i.ibb.co/3TySsM7/09-notice-write.png" alt="09_notice-write" loading="lazy" width="650px" />
+<img src="https://i.ibb.co/rZR952k/07-notice.png" alt="07_notice" loading="lazy" width="400px" />
+<img src="https://i.ibb.co/KNHnYk7/08-notice-detail.png" alt="08_notice-detail" loading="lazy" width="400px" />
+<img src="https://i.ibb.co/3TySsM7/09-notice-write.png" alt="09_notice-write" loading="lazy" width="400px" />
 
 ### My Page
 
