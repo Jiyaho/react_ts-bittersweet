@@ -98,9 +98,9 @@ Kakao Map API를 이용하여 지도를 넣었고, 특정 매장을 검색하여
 - 공지사항 게시판입니다. 읽기는 모든 사용자 가능, 글 쓰기 권한은 로그인한 사용자입니다.
 - 서버와 통신, CRUD 기능을 구현하였습니다.
 
-<img src="https://i.ibb.co/rZR952k/07-notice.png" alt="07_notice" loading="lazy" width="400px" />
-<img src="https://i.ibb.co/KNHnYk7/08-notice-detail.png" alt="08_notice-detail" loading="lazy" width="400px" />
-<img src="https://i.ibb.co/3TySsM7/09-notice-write.png" alt="09_notice-write" loading="lazy" width="400px" />
+<img src="https://i.ibb.co/rZR952k/07-notice.png" alt="07_notice" loading="lazy" width="650px" />
+<img src="https://i.ibb.co/KNHnYk7/08-notice-detail.png" alt="08_notice-detail" loading="lazy" width="650px" />
+<img src="https://i.ibb.co/3TySsM7/09-notice-write.png" alt="09_notice-write" loading="lazy" width="650px" />
 
 ### My Page
 
@@ -127,10 +127,10 @@ Kakao Map API를 이용하여 지도를 넣었고, 특정 매장을 검색하여
 - 반응형 웹을 지원합니다.
 
 <img src="https://i.ibb.co/dG5GZnk/pc-mobile.png" alt="pc-mobile" border="0" width="200px" />
-<img src="https://i.ibb.co/n7KvJgB/M01-home.png" alt="M01_home" loading="lazy" width="550px" />
-<img src="https://i.ibb.co/zJ2ztTY/M02-menu.png" alt="M02_menu" loading="lazy" width="550px" />
-<img src="https://i.ibb.co/xDtNhJG/M03-menu-detail.png" alt="M03_menu-detail" loading="lazy" width="550px" />
-<img src="https://i.ibb.co/2yRFLC0/M04-user-info-update.png" alt="M04_user-info-update" loading="lazy" width="550px" />
+<img src="https://i.ibb.co/n7KvJgB/M01-home.png" alt="M01_home" loading="lazy" width="400px" />
+<img src="https://i.ibb.co/zJ2ztTY/M02-menu.png" alt="M02_menu" loading="lazy" width="400px" />
+<img src="https://i.ibb.co/xDtNhJG/M03-menu-detail.png" alt="M03_menu-detail" loading="lazy" width="400px" />
+<img src="https://i.ibb.co/2yRFLC0/M04-user-info-update.png" alt="M04_user-info-update" loading="lazy" width="400px" />
 
 ## 🔷 Trouble Shooting
 
