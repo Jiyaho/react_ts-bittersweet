@@ -61,7 +61,7 @@
 
 새로운 메뉴, 이벤트 배너 등으로 이루어진 메인 페이지입니다.
 
-<img src="https://i.ibb.co/vss551w/01-home.png" alt="01-home" border="0" loading="lazy" />
+<img src="https://i.ibb.co/vss551w/01-home.png" alt="01-home" width="500px" border="0" loading="lazy" />
 
 ### About Us Page
 
@@ -73,7 +73,7 @@
 
 커피&음료 메뉴들을 볼 수 있는 페이지입니다.
 
-<img src="https://i.ibb.co/fQdjxCm/03-menu.png" alt="03-menu" border="0" loading="lazy" />
+<img src="https://i.ibb.co/fQdjxCm/03-menu.png" alt="03-menu" width="500px" border="0" loading="lazy" />
 
 ### Menu Detail Page
 
