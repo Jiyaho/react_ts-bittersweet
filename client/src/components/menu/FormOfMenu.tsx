@@ -12,7 +12,7 @@ function FormOfMenu({ LinkTo, menuName, imgsrc, imgalt }: Menu) {
   return (
     <>
       <Link to={LinkTo}>
-        <img src={imgsrc} alt={imgalt} />
+        <img src={imgsrc} alt={imgalt} loading="lazy" />
       </Link>
       <span>{menuName}</span>
     </>
