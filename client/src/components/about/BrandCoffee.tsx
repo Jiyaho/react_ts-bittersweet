@@ -1,10 +1,7 @@
 import * as S from './BrandCoffee.styles';
-import { baseUrl } from '../../utils/constants';
 import { Coffeebean1, Coffeebean2, Coffeebean3, Coffeebean4 } from '../../assets/images/about';
 
 function BrandCoffee() {
-  // const addUrl = '/images/about/';
-  // const URL = baseUrl + addUrl;
   return (
     <S.Article>
       <h1>COFFEE</h1>
@@ -14,7 +11,6 @@ function BrandCoffee() {
           비터스윗의 아라비카 원두는 고품질, 그 이상의 의미를 갖습니다. <br />
           최상의 품질을 위한 최선의 노력들이 모든 단계에서 이뤄집니다.
         </p>
-        {/* <img src={URL + 'coffee-bean1.jpg'} alt="coffeeBean1" /> */}
         <img src={Coffeebean1} alt="coffeeBean1" />
       </S.FirstDiv>
 
