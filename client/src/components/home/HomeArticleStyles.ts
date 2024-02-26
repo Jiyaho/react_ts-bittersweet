@@ -11,6 +11,8 @@ export const Section = styled.section`
 export const FirstArticle = styled.article`
   position: sticky;
   margin-bottom: -4px;
+  width: 100%;
+  height: 100%;
   @keyframes slide-leftToRight {
     from {
       left: -100px;
@@ -93,6 +95,8 @@ export const FirstArticle = styled.article`
 `;
 
 export const SecondArticle = styled.article`
+  width: 100%;
+  height: 100%;
   div {
     display: flex;
     justify-content: center;
