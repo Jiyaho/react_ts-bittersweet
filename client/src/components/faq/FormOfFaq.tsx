@@ -2,12 +2,12 @@ import { BiSolidDownArrow } from 'react-icons/bi';
 import { useState } from 'react';
 import * as S from './FormOfFaq.styles';
 
-interface FormOfFaq {
+interface Props {
   question: string;
   answer: string;
 }
 
-function FormOfFaq({ question, answer }: FormOfFaq) {
+function FormOfFaq({ question, answer }: Props) {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => {
     setToggle(!toggle);

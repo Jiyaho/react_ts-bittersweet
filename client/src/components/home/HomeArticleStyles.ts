@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
-import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
   display: flex;
@@ -57,6 +56,7 @@ export const FirstArticle = styled.article`
   }
   img {
     width: 100%;
+    height: 100%;
   }
   @media (max-width: 768px) {
     h1 {
@@ -108,6 +108,7 @@ export const SecondArticle = styled.article`
   img {
     background: fixed;
     width: 100%;
+    height: 100%;
   }
   @media (max-width: 768px) {
     span {

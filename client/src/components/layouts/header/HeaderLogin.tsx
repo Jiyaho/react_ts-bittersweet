@@ -2,14 +2,12 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { LoginDiv } from './HeaderStyles';
 import { useLogout, useAuth } from '../../../Api/UsersApi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setUserAuth } from '../../../features/userSlice';
-import { RootState } from '../../../features/store';
 
 function HeaderLogin({ className }: { className: string }) {
   const dispatch = useDispatch();
-  const isAuth = useSelector((state: RootState) => state.user.isAuth);
-  const userName = useSelector((state: RootState) => state.user.name);
+
   const [isLogin, setIsLogin] = useState(false);
   const [loginUserName, setLoginUserName] = useState<null | string>(null);
   const setLogout = useLogout();
@@ -45,7 +43,7 @@ function HeaderLogin({ className }: { className: string }) {
           name: authData.name,
           isAdmin: authData.isAdmin,
           email: authData.email,
-        })
+        }),
       );
     }
   }, [authData]);
